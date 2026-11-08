@@ -1,9 +1,8 @@
 <div align="center">
 
-# 🌐 Web Elements for Indie Developers
+# 🌐 Web Elements for Indie Developers & Creators
 
-**Production-ready, zero-dependency floating web widgets designed for indie hackers, creators & solo founders.**  
-*1-click direct UPI donations (0% fees, instant bank transfer) and native Web Share dialogs with social quicklinks.*
+**Zero-dependency floating web widgets for indie developers & creators:** 1-click direct UPI donations and native Web Share dialogs with social quicklinks.
 
 <br/>
 
@@ -18,6 +17,30 @@
 [**Live Interactive Demo & Configurator →**](https://purohitbhagyesh.github.io/web-elements/)
 
 </div>
+
+---
+
+## ✨ What this project does
+
+Web Elements is a lightweight toolkit of floating widgets built for creators, indie hackers, and small teams who want to monetize and grow without bloated third-party SDKs.
+
+- ☕ Direct UPI donation widget with instant bank settlement
+- 🚀 Native Web Share widget with social quicklinks
+- 🧩 Zero-dependency, plugin-free, browser-native implementation
+- ⚡ Works in static sites, React/Vite/Next.js apps, and plain HTML pages
+
+---
+
+## 📊 Repository snapshot
+
+This repo is primarily built with a lightweight frontend stack:
+
+- JavaScript: 47.7%
+- HTML: 26.1%
+- CSS: 21.7%
+- Shell: 4.5%
+
+The implementation is intentionally simple: vanilla JavaScript + CSS + HTML with no external runtime dependencies.
 
 ---
 
@@ -52,7 +75,8 @@ web-elements/
 ├── CONTRIBUTING.md             # Developer guidelines & contribution flow
 ├── CODE_OF_CONDUCT.md         # Community standard
 ├── SECURITY.md                 # Vulnerability reporting protocol
-└── LICENSE                     # Official MIT License
+├── LICENSE                     # Official MIT License
+└── README.md                   # Project overview and quickstart
 ```
 
 ---
@@ -78,13 +102,13 @@ Receive support directly from your users with zero middleman deductions:
 - **Instant Settlement**: Receive 100% of donations directly into your personal bank account.
 - **Dynamic Amount-Synced QR Code**: Automatically recalculates and renders a clean vector QR code matching the amount selected by your supporter.
 - **1-Click Mobile App Deep Links**:
-  - **FamApp** (with registered iOS deep links `in.fampay.app://` and `famapp://`)
-  - **PhonePe** (`phonepe://upi/pay?`)
-  - **Google Pay / Tez** (`tez://upi/pay?`)
-  - **Paytm** (`paytmmp://pay?`)
-  - **Amazon Pay** (`amazonpay://upi/pay?`)
-  - **WhatsApp Pay** (`whatsapp://pay?`)
-- **Live Editable Name & UPI ID**: Change your payee name or UPI VPA dynamically via JavaScript or using the built-in `✎` edit button inside the widget!
+  - **FamApp**
+  - **PhonePe**
+  - **Google Pay / Tez**
+  - **Paytm**
+  - **Amazon Pay**
+  - **WhatsApp Pay**
+- **Live Editable Name & UPI ID**: Change your payee name or UPI VPA dynamically via JavaScript or using the built-in `✎` edit button inside the widget.
 - **Desktop Fallback**: Desktop visitors see an instant scannable QR code and 1-click clipboard copy with visual feedback.
 
 ### 2. 🚀 Native Web Share Link (`share-link/`)
@@ -184,7 +208,7 @@ share.open(); // Programmatically open sheet
 }
 ```
 
-Add `data-theme="light"` to `<html>` or `<body>` to automatically toggle clean light mode!
+Add `data-theme="light"` to `<html>` or `<body>` to automatically toggle clean light mode.
 
 ---
 
