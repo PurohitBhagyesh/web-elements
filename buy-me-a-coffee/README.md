@@ -78,3 +78,4 @@ Supports light and dark mode automatically. Customize via CSS variables:
 ## 📄 License
 
 MIT © [Bhagyesh Purohit](https://github.com/PurohitBhagyesh)
+
