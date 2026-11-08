@@ -32,3 +32,4 @@ body:
       placeholder: "e.g. Chrome 122 on macOS Sonoma / Safari on iOS 17"
     validations:
       required: true
+

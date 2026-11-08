@@ -19,3 +19,4 @@
 - [ ] I have tested changes across desktop and mobile viewports.
 - [ ] JavaScript syntax check passes (`node -c <file>`).
 - [ ] Code is properly formatted and accessible.
+

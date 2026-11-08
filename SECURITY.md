@@ -23,3 +23,4 @@ Please include:
 - Details regarding affected browsers, operating systems, or versions.
 
 We appreciate your effort in responsibly disclosing issues and will work to address verified vulnerabilities as quickly as possible.
+

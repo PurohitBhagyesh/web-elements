@@ -110,3 +110,4 @@ git commit -m "feat(coffee-upi): add dynamic payee name and UPI ID edit methods"
 ## 📄 License Notice
 
 By contributing to Web Elements, you agree that your contributions will be licensed under the project's [MIT License](LICENSE).
+

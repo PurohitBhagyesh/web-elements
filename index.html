@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Elements - Modern UPI Buy Me a Coffee & Web Share Widgets</title>
-  <meta name="description" content="Lightweight, plug-and-play floating widgets for modern websites: 1-click UPI Buy Me a Coffee and Native Web Share.">
-  <link rel="stylesheet" href="coffee-upi.css">
-  <link rel="stylesheet" href="share-link.css">
+  <title>Web Elements for Indie Developers - UPI Buy Me a Coffee & Native Web Share</title>
+  <meta name="description" content="Lightweight, zero-dependency floating widgets for indie developers: 1-click UPI Buy Me a Coffee (0% fees) and Native Web Share.">
+  <link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css">
+  <link rel="stylesheet" href="share-link/share-link.css">
   <style>
     :root {
       --bg: #090a0f;
@@ -49,7 +49,7 @@
 
     header {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 36px;
     }
 
     .badge {
@@ -76,7 +76,7 @@
     p.lead {
       color: var(--text-muted);
       font-size: 1.15rem;
-      max-width: 600px;
+      max-width: 640px;
       margin: 0 auto 24px;
       line-height: 1.6;
     }
@@ -98,6 +98,82 @@
 
     .theme-toggle-btn:hover {
       border-color: var(--text-muted);
+    }
+
+    /* Terminal Quick Install Banner */
+    .terminal-banner {
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .terminal-bar {
+      background: #161b22;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    .terminal-title {
+      font-size: 11.5px;
+      color: #8b949e;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      margin-left: 6px;
+    }
+
+    .terminal-body {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      overflow-x: auto;
+    }
+
+    .terminal-body code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      color: #38bdf8;
+      white-space: nowrap;
+    }
+
+    .terminal-copy-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #f0f6fc;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .terminal-copy-btn:hover {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     .grid {
@@ -326,13 +402,29 @@
 <body>
   <div class="container">
     <header>
-      <div class="badge">Open Source Web Components</div>
+      <div class="badge">Built for Indie Developers & Hackers</div>
       <h1>Web Elements</h1>
-      <p class="lead">Two beautiful, zero-dependency floating components for modern websites: 1-Click UPI Buy Me a Coffee and Native Web Share.</p>
+      <p class="lead">Two beautiful, zero-dependency floating components: 1-Click UPI Buy Me a Coffee (0% fees) and Native Web Share.</p>
       <button class="theme-toggle-btn" id="btnToggleTheme" type="button">
         <span>🌓</span> Toggle Light/Dark Theme
       </button>
     </header>
+
+    <!-- 1-Line Bash Install Banner -->
+    <div class="terminal-banner">
+      <div class="terminal-bar">
+        <div class="terminal-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="terminal-title">1-Line Bash Install</span>
+      </div>
+      <div class="terminal-body">
+        <code>curl -sSL https://raw.githubusercontent.com/PurohitBhagyesh/web-elements/main/install.sh | bash</code>
+        <button class="terminal-copy-btn" onclick="navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/PurohitBhagyesh/web-elements/main/install.sh | bash'); this.innerText='Copied!'">Copy Command</button>
+      </div>
+    </div>
 
     <div class="grid">
       <!-- 1. Buy Me a Coffee (UPI) Feature Card -->
@@ -341,7 +433,7 @@
           <div class="card-icon coffee">☕</div>
           <div class="card-title">
             <h2>Buy Me a Coffee (UPI)</h2>
-            <span>Zero payment gateway fees, instant bank settlement</span>
+            <span>0% platform fees, instant bank settlement</span>
           </div>
         </div>
 
@@ -360,14 +452,14 @@
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            One-click UPI ID copy to clipboard with feedback
+            One-click UPI ID copy to clipboard with instant feedback
           </li>
         </ul>
 
         <div class="code-box">
           <button class="code-copy-btn" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'">Copy</button>
-          <code>&lt;link rel="stylesheet" href="coffee-upi.css"&gt;
-&lt;script src="coffee-upi.js"
+          <code>&lt;link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css"&gt;
+&lt;script src="buy-me-a-coffee/coffee-upi.js"
   data-upi="purohitbhagyesh@fam"
   data-name="Bhagyesh Purohit"&gt;&lt;/script&gt;</code>
         </div>
@@ -404,8 +496,8 @@
 
         <div class="code-box">
           <button class="code-copy-btn" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'">Copy</button>
-          <code>&lt;link rel="stylesheet" href="share-link.css"&gt;
-&lt;script src="share-link.js"
+          <code>&lt;link rel="stylesheet" href="share-link/share-link.css"&gt;
+&lt;script src="share-link/share-link.js"
   data-title="My Project"
   data-url="https://example.com"&gt;&lt;/script&gt;</code>
         </div>
@@ -508,9 +600,9 @@
     </div>
   </div>
 
-  <!-- Load Scripts -->
-  <script src="coffee-upi.js"></script>
-  <script src="share-link.js"></script>
+  <!-- Load Structured Scripts -->
+  <script src="buy-me-a-coffee/coffee-upi.js"></script>
+  <script src="share-link/share-link.js"></script>
 
   <script>
     // Initialize Both Live Widgets Programmatically
@@ -557,7 +649,7 @@
         amount: amt
       });
 
-      codeCoffeeSnippet.textContent = `<link rel="stylesheet" href="coffee-upi.css">\n<script src="coffee-upi.js"\n  data-upi="${upi}"\n  data-name="${name}"\n  data-amount="${amt}"><\/script>`;
+      codeCoffeeSnippet.textContent = `<link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css">\n<script src="buy-me-a-coffee/coffee-upi.js"\n  data-upi="${upi}"\n  data-name="${name}"\n  data-amount="${amt}"><\/script>`;
     }
 
     inputPayeeName.addEventListener('input', updateCoffeeConfig);
@@ -601,7 +693,7 @@
         text: text
       });
 
-      codeShareSnippet.textContent = `<link rel="stylesheet" href="share-link.css">\n<script src="share-link.js"\n  data-url="${url}"\n  data-title="${title}"\n  data-text="${text}"><\/script>`;
+      codeShareSnippet.textContent = `<link rel="stylesheet" href="share-link/share-link.css">\n<script src="share-link/share-link.js"\n  data-url="${url}"\n  data-title="${title}"\n  data-text="${text}"><\/script>`;
     }
 
     inputShareUrl.addEventListener('input', updateShareConfig);

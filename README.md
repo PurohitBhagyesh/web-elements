@@ -1,52 +1,82 @@
-# 🌐 Web Elements
+<div align="center">
 
-> **Production-ready, lightweight, zero-dependency floating web widgets.**  
-> Features 1-click direct UPI donations (*0% transaction fees, instant settlement*) and native Web Share dialogs with social quicklinks.
+# 🌐 Web Elements for Indie Developers
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
-[![Zero Dependencies](https://img.shields.io/badge/Dependencies-0_external-blue.svg)](index.html)
-[![Vanilla JS](https://img.shields.io/badge/JavaScript-ES6+-f59e0b.svg)](coffee-upi.js)
-[![CSS3 Variables](https://img.shields.io/badge/Styling-CSS3_Variables-38bdf8.svg)](coffee-upi.css)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+**Production-ready, zero-dependency floating web widgets designed for indie hackers, creators & solo founders.**  
+*1-click direct UPI donations (0% fees, instant bank transfer) and native Web Share dialogs with social quicklinks.*
+
+<br/>
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg?style=for-the-badge)](LICENSE)
+[![Zero Dependencies](https://img.shields.io/badge/Dependencies-0_external-3b82f6.svg?style=for-the-badge)](index.html)
+[![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla_ES6+-f59e0b.svg?style=for-the-badge)](buy-me-a-coffee/coffee-upi.js)
+[![CSS3 Variables](https://img.shields.io/badge/Theme-CSS3_Variables-38bdf8.svg?style=for-the-badge)](buy-me-a-coffee/coffee-upi.css)
+[![Indie Hackers](https://img.shields.io/badge/For-Indie_Developers-8b5cf6.svg?style=for-the-badge)](https://github.com/PurohitBhagyesh/web-elements)
+
+<br/>
+
+[**Live Interactive Demo & Configurator →**](https://purohitbhagyesh.github.io/web-elements/)
+
+</div>
 
 ---
 
-## ⚡ Live Demo & Interactive Playground
+## ⚡ 1-Line Bash Install (Indie Dev Fast Track)
 
-Open **[`index.html`](file:///Users/purohitbhagyesh/Documents/projects/web-elements/index.html)** in any browser or launch a local preview:
+Install directly into any project (`Next.js`, `Vite`, `React`, `Astro`, `Vue`, or static HTML) in one command:
 
 ```bash
-# Python
-python3 -m http.server 8000
-
-# or Node.js
-npx serve .
+curl -sSL https://raw.githubusercontent.com/PurohitBhagyesh/web-elements/main/install.sh | bash
 ```
 
-The demo page includes an **Interactive Configurator** where you can live-edit your Payee Name, UPI ID, Share Link, and Title, test the modal triggers, and copy the auto-generated code snippet in real time!
+> 💡 **Tip:** Auto-detects `public/`, `static/`, or `assets/` folders if present, or installs to `./web-elements/`.
 
 ---
 
-## 💡 Why Web Elements?
+## 📁 Repository Structure
+
+```text
+web-elements/
+├── ☕ buy-me-a-coffee/          # Buy Me a Coffee (UPI) for Indie Developers
+│   ├── coffee-upi.js           # Lightweight logic & dynamic QR code engine
+│   ├── coffee-upi.css          # Modern dark/light modal with smooth spring animations
+│   └── README.md               # Dedicated component documentation
+│
+├── 🚀 share-link/              # Native Web Share Link for Indie Developers
+│   ├── share-link.js           # Web Share API + clipboard fallback + social quicklinks
+│   ├── share-link.css          # Sleek floating pill & share sheet styling
+│   └── README.md               # Dedicated component documentation
+│
+├── install.sh                  # 1-line bash installer for terminal workflows
+├── index.html                  # Interactive live playground & configurator
+├── CONTRIBUTING.md             # Developer guidelines & contribution flow
+├── CODE_OF_CONDUCT.md         # Community standard
+├── SECURITY.md                 # Vulnerability reporting protocol
+└── LICENSE                     # Official MIT License
+```
+
+---
+
+## 💡 Why Indie Developers Choose This
 
 | Feature | ☕ Web Elements (Coffee UPI) | Traditional Gateways (Stripe/Razorpay) | Third-Party Platforms (BuyMeACoffee) |
 |---|---|---|---|
 | **Platform Commission** | **0% (Direct peer-to-peer UPI)** | 2% – 3% + GST | 5% platform cut + currency fx conversion |
-| **Payout Settlement** | **Instant (directly to your bank)** | T+2 to T+7 business days | Monthly threshold payout ($10 minimum) |
-| **Merchant KYC / Paperwork** | **None (use any personal UPI VPA)** | Extensive business KYC & merchant account | Account creation & platform lock-in |
-| **Runtime Footprint** | **0 dependencies (~4 KB minified)** | 100+ KB heavy JS SDKs | Slow external iframe embeds & tracking scripts |
+| **Payout Settlement** | **Instant (directly into your bank)** | T+2 to T+7 business days | Monthly threshold payout ($10 minimum) |
+| **Merchant KYC / Paperwork** | **None (use your existing personal UPI ID)** | Extensive business KYC & merchant account | Account creation & platform lock-in |
+| **Runtime Footprint** | **0 dependencies (~4 KB)** | 100+ KB heavy JS SDKs | Slow external iframe embeds & tracking scripts |
 | **Dark & Light Mode** | **Native CSS custom properties** | Custom theme CSS overrides required | Inflexible widget styling |
 
 ---
 
-## 📦 Widgets Included
+## 📦 What's Inside
 
-### 1. ☕ Buy Me a Coffee (UPI) (`coffee-upi.js` & `coffee-upi.css`)
+### 1. ☕ Buy Me a Coffee (UPI) (`buy-me-a-coffee/`)
 
-A modern floating pill button that smoothly expands into an interactive donation modal:
+Receive support directly from your users with zero middleman deductions:
 
-- **Instant Settlement**: Receive 100% of tips directly into your bank account with zero intermediary commissions.
-- **Dynamic Amount-Synced QR Code**: Automatically recalculates and generates clean vector QR codes as users change the amount.
+- **Instant Settlement**: Receive 100% of donations directly into your personal bank account.
+- **Dynamic Amount-Synced QR Code**: Automatically recalculates and renders a clean vector QR code matching the amount selected by your supporter.
 - **1-Click Mobile App Deep Links**:
   - **FamApp** (with registered iOS deep links `in.fampay.app://` and `famapp://`)
   - **PhonePe** (`phonepe://upi/pay?`)
@@ -54,46 +84,38 @@ A modern floating pill button that smoothly expands into an interactive donation
   - **Paytm** (`paytmmp://pay?`)
   - **Amazon Pay** (`amazonpay://upi/pay?`)
   - **WhatsApp Pay** (`whatsapp://pay?`)
-- **Live Editable Name & UPI ID**: Switch payee names or UPI VPAs on the fly via UI edit buttons or JavaScript methods.
-- **Desktop Fallback & Clipboard Sync**: Auto-detects desktop environments, displays QR code scanning guidance, and provides a 1-click clipboard copy with visual feedback.
-- **Preset Quick-Select Chips**: ₹20, ₹50, ₹100, ₹200 or custom integer input.
+- **Live Editable Name & UPI ID**: Change your payee name or UPI VPA dynamically via JavaScript or using the built-in `✎` edit button inside the widget!
+- **Desktop Fallback**: Desktop visitors see an instant scannable QR code and 1-click clipboard copy with visual feedback.
 
-### 2. 🚀 Native Web Share (`share-link.js` & `share-link.css`)
+### 2. 🚀 Native Web Share Link (`share-link/`)
 
-A responsive floating share widget designed for maximum content distribution:
+Turn every visitor into an organic distribution channel:
 
-- **Native OS Share Sheet**: Integrates with the browser's Level 2 Web Share API (`navigator.share`) for AirDrop, Messages, Mail, and system sheets on iOS, Android, and macOS.
-- **1-Click Clipboard Copy**: Copies the current or configured URL with an animated `Copied!` confirmation badge.
-- **Direct Social Quicklinks**: Pre-encoded 1-click sharing to:
-  - **WhatsApp** (`api.whatsapp.com`)
-  - **X / Twitter** (`twitter.com/intent/tweet`)
-  - **LinkedIn** (`linkedin.com/sharing/share-offsite`)
-  - **Reddit** (`reddit.com/submit`)
-  - **Telegram** (`t.me/share/url`)
-- **Live Editable Link & Title**: Update the target share link, title, and message dynamically in real time.
-- **Accessible UX**: Supports keyboard dismissal via `Escape`, click-outside backdrop dismissal, and screen reader friendly ARIA labels.
+- **Native OS Share Sheet**: Integrates with the Level 2 Web Share API (`navigator.share`) for AirDrop, Messages, Mail, and system sheets on iOS, Android, and macOS Safari.
+- **1-Click Clipboard Copy**: One-tap URL copy with animated `Copied!` confirmation badge.
+- **Direct Social Quicklinks**: Pre-encoded 1-click sharing to WhatsApp, X (Twitter), LinkedIn, Reddit, and Telegram.
+- **Live Editable Link & Title**: Update the target share link, title, and description dynamically in real time.
+- **Accessible UX**: Screen reader friendly ARIA labels and keyboard dismissal with `Escape`.
 
 ---
 
 ## 🚀 Quickstart
 
-### Method 1: Declarative HTML Script Tag (Zero JS Code)
-
-Simply include the CSS and script tag in your HTML. Pass options directly via `data-*` attributes:
+### Option A: HTML Script Tag (Zero JS Code)
 
 ```html
-<!-- 1. Coffee UPI Widget -->
-<link rel="stylesheet" href="coffee-upi.css">
-<script src="coffee-upi.js"
+<!-- 1. Buy Me a Coffee (UPI) -->
+<link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css">
+<script src="buy-me-a-coffee/coffee-upi.js"
   data-upi="yourname@fam"
   data-name="Your Name"
   data-amount="50"
   data-position="bottom-left">
 </script>
 
-<!-- 2. Share Link Widget -->
-<link rel="stylesheet" href="share-link.css">
-<script src="share-link.js"
+<!-- 2. Native Web Share Link -->
+<link rel="stylesheet" href="share-link/share-link.css">
+<script src="share-link/share-link.js"
   data-url="https://yourwebsite.com"
   data-title="Check out this awesome project!"
   data-text="Found this great project, thought you might like it!"
@@ -103,20 +125,16 @@ Simply include the CSS and script tag in your HTML. Pass options directly via `d
 
 ---
 
-### Method 2: Programmatic JavaScript API
-
-Ideal for Single Page Applications (React, Vue, Svelte, Next.js, Astro) or dynamic pages:
+### Option B: JavaScript API (React / Vue / Next.js / Astro)
 
 ```javascript
 // Initialize Coffee UPI
 const coffee = CoffeeUPI.init({
-  upiId: 'purohitbhagyesh@fam',
-  payeeName: 'Bhagyesh Purohit',
+  upiId: 'yourname@fam',
+  payeeName: 'Your Name',
   defaultAmount: 50,
   presets: [20, 50, 100, 200],
-  position: 'bottom-left',
-  title: 'Buy me a coffee',
-  subtitle: 'Every coffee fuels continuous development.'
+  position: 'bottom-left'
 });
 
 // Initialize Web Share
@@ -124,186 +142,60 @@ const share = ShareLink.init({
   url: window.location.href,
   title: document.title,
   text: 'Check out these free plug-and-play web elements!',
-  buttonText: 'Share',
   position: 'bottom-right'
 });
 ```
 
 ---
 
-## 🎛 Dynamic Editing API
+## 🎛 Live Dynamic Editing
 
-Both widgets support runtime updates so you can edit the payee name, UPI ID, or share link on the fly:
-
-### Editing Coffee UPI at Runtime
+Update widget configuration anytime at runtime without reloading:
 
 ```javascript
-// 1. Edit Payee Name
-coffee.setPayeeName('New Creator Name');
-
-// 2. Edit UPI ID (VPA) - updates QR code & app links instantly
-coffee.setUpiId('creator@oksbi');
-
-// 3. Edit Amount
+// Edit Coffee UPI on the fly
+coffee.setPayeeName('Bhagyesh Purohit');
+coffee.setUpiId('purohitbhagyesh@fam');
 coffee.setAmount(100);
+coffee.open(); // Programmatically open modal
 
-// 4. Batch update multiple configuration properties
-coffee.updateConfig({
-  payeeName: 'Bhagyesh Purohit',
-  upiId: 'purohitbhagyesh@fam',
-  defaultAmount: 100,
-  title: 'Support My Work',
-  position: 'bottom-right'
-});
-
-// 5. Programmatic modal controls
-coffee.open();
-coffee.close();
-coffee.toggle();
+// Edit Share Link on the fly
+share.setUrl('https://mywebsite.com/new-feature');
+share.setTitle('Check out this new release!');
+share.open(); // Programmatically open sheet
 ```
-
-> **Note:** Users can also click the ✎ edit icon inside the widget header to edit the name and UPI ID directly from the UI.
 
 ---
 
-### Editing Share Link at Runtime
-
-```javascript
-// 1. Update the target URL
-share.setUrl('https://github.com/PurohitBhagyesh/web-elements/releases/latest');
-
-// 2. Update the share title
-share.setTitle('Web Elements v2.0 Released!');
-
-// 3. Update the share message / text
-share.setText('Check out the new live editor and UPI updates:');
-
-// 4. Batch update configuration
-share.updateConfig({
-  url: 'https://mysite.com/blog/article-1',
-  title: 'Understanding Modern Web Components',
-  text: 'Essential guide for web developers:'
-});
-
-// 5. Programmatic modal controls
-share.open();
-share.close();
-share.toggle();
-```
-
-> **Note:** Users can also click the ✎ edit icon in the share header to edit the URL, title, and description directly in the modal drawer.
-
----
-
-## 📖 Configuration Reference
-
-### Coffee UPI (`CoffeeUPI.init`)
-
-| Option | Type | Default | Description |
-|---|---|---|---|
-| `upiId` | `string` | `'purohitbhagyesh@fam'` | Your UPI Virtual Payment Address (e.g. `user@oksbi`, `user@fam`, `user@paytm`) |
-| `payeeName` | `string` | `'Bhagyesh Purohit'` | Payee name shown during payment checkout in UPI apps |
-| `defaultAmount` | `number` | `50` | Initial tip amount in INR (₹) |
-| `presets` | `number[]` | `[20, 50, 100, 200]` | Preset quick-select chips rendered in the modal |
-| `position` | `string` | `'bottom-left'` | Corner placement (`'bottom-left'` or `'bottom-right'`) |
-| `title` | `string` | `'Buy me a coffee'` | Text rendered on the floating pill button and modal header |
-| `subtitle` | `string` | `'Every coffee fuels...'` | Note displayed at the footer of the modal |
-
-### Share Link (`ShareLink.init`)
-
-| Option | Type | Default | Description |
-|---|---|---|---|
-| `url` | `string` | `window.location.href` | Target URL to copy and share across networks |
-| `title` | `string` | `document.title` | Title passed to native sheet & Reddit |
-| `text` | `string` | `'Check this out!'` | Text body passed to WhatsApp, X (Twitter), Telegram & native sheet |
-| `buttonText` | `string` | `'Share'` | Text rendered inside floating pill button |
-| `position` | `string` | `'bottom-right'` | Corner placement (`'bottom-right'` or `'bottom-left'`) |
-
----
-
-## 🎨 Theming & Styling
-
-Both widgets look great out of the box in dark mode and automatically respect light mode when `data-theme="light"` is placed on `<html>` or `<body>`:
-
-```html
-<html data-theme="light">
-```
-
-### CSS Custom Properties
-
-Customize the appearance to fit your brand identity by tweaking CSS variables:
+## 🎨 Theming & CSS Variables
 
 ```css
 :root {
   /* Coffee UPI Customization */
-  --cupi-accent: #22c55e;             /* Primary accent color */
-  --cupi-bg: #121316;                 /* Background tone */
-  --cupi-surface: #1a1c22;            /* Card & pill surface */
-  --cupi-surface-hover: #23262e;      /* Hover states */
-  --cupi-border: rgba(255,255,255,0.1);/* Card borders */
-  --cupi-text: #f4f4f5;               /* Primary typography */
-  --cupi-text-muted: #a1a1aa;         /* Secondary typography */
+  --cupi-accent: #22c55e;
+  --cupi-bg: #121316;
+  --cupi-surface: #1a1c22;
+  --cupi-text: #f4f4f5;
 
   /* Share Link Customization */
-  --wshare-accent: #3b82f6;           /* Primary blue accent */
-  --wshare-surface: #1a1c22;          /* Surface color */
-  --wshare-border: rgba(255,255,255,0.1);
+  --wshare-accent: #3b82f6;
+  --wshare-surface: #1a1c22;
   --wshare-text: #f4f4f5;
 }
 ```
 
----
-
-## 📱 Mobile Deep Link Schemes
-
-The Coffee UPI widget uses standardized deep links tested across major Indian UPI apps:
-
-| App | Deep Link Protocol | Fallback Protocol |
-|---|---|---|
-| **FamApp** | `in.fampay.app://upi/pay?pa=...` | `famapp://upi/pay?pa=...` |
-| **PhonePe** | `phonepe://upi/pay?pa=...` | Universal QR Code |
-| **Google Pay (Tez)** | `tez://upi/pay?pa=...` | Universal QR Code |
-| **Paytm** | `paytmmp://pay?pa=...` | Universal QR Code |
-| **Amazon Pay** | `amazonpay://upi/pay?pa=...` | Universal QR Code |
-| **WhatsApp Pay** | `whatsapp://pay?pa=...` | Universal QR Code |
-| **Generic UPI / BHIM** | `upi://pay?pa=...` | Universal QR Code |
-
----
-
-## 🌐 Browser Compatibility
-
-| Browser / Platform | Support | Notes |
-|---|:---:|---|
-| **iOS Safari (13+)** | ✅ Full | Deep links directly to installed UPI apps & invokes native Share Sheet |
-| **Android Chrome** | ✅ Full | Direct intent triggers for payment apps & native OS Web Share sheet |
-| **Desktop Chrome / Edge** | ✅ Full | Auto-generates scannable vector QR code & 1-click clipboard copy |
-| **Desktop Safari (macOS)** | ✅ Full | Native AirDrop / Messages sharing via `navigator.share` |
-| **Mozilla Firefox** | ✅ Full | Fallback clipboard copying and social quicklinks |
+Add `data-theme="light"` to `<html>` or `<body>` to automatically toggle clean light mode!
 
 ---
 
 ## 🤝 Contributing
 
-Contributions, bug reports, and suggestions are warmly welcomed! Please read our [**Contributing Guide**](CONTRIBUTING.md) and [**Code of Conduct**](CODE_OF_CONDUCT.md) before submitting pull requests.
-
-```bash
-# 1. Fork repository & clone
-git clone https://github.com/PurohitBhagyesh/web-elements.git
-
-# 2. Create feature branch
-git checkout -b feat/my-new-feature
-
-# 3. Test syntax
-node -c coffee-upi.js && node -c share-link.js
-
-# 4. Commit using conventional commits
-git commit -m "feat: describe your enhancement"
-```
+Contributions, feature requests, and suggestions are welcome! Check out our [Contributing Guide](CONTRIBUTING.md) to get started.
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the [**MIT License**](LICENSE).
+Open source and available under the [MIT License](LICENSE).
 
 Copyright © 2026 [**Bhagyesh Purohit**](https://github.com/PurohitBhagyesh).

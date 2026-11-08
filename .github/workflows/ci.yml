@@ -21,13 +21,20 @@ jobs:
 
       - name: Validate JavaScript Syntax
         run: |
+          node -c buy-me-a-coffee/coffee-upi.js
+          node -c share-link/share-link.js
           node -c coffee-upi.js
           node -c share-link.js
 
-      - name: Check HTML and CSS Files Exist
+      - name: Check Structure and Core Files
         run: |
           test -f index.html
-          test -f coffee-upi.css
-          test -f share-link.css
+          test -f install.sh
+          test -f buy-me-a-coffee/coffee-upi.js
+          test -f buy-me-a-coffee/coffee-upi.css
+          test -f buy-me-a-coffee/README.md
+          test -f share-link/share-link.js
+          test -f share-link/share-link.css
+          test -f share-link/README.md
           test -f LICENSE
           test -f README.md
