@@ -9,8 +9,8 @@
 - [ ] ⚡ Performance improvement
 
 ## Component Affected
-- [ ] `coffee-upi.js` / `coffee-upi.css`
-- [ ] `share-link.js` / `share-link.css`
+- [ ] `buy-me-a-coffee/`
+- [ ] `share-link/`
 - [ ] `index.html` demo & playground
 - [ ] Documentation / Meta
 

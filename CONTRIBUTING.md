@@ -96,7 +96,7 @@ git commit -m "feat(coffee-upi): add dynamic payee name and UPI ID edit methods"
    - Mobile viewports (iOS Safari and Android Chrome via DevTools)
 3. Ensure no syntax errors:
    ```bash
-   node -c coffee-upi.js && node -c share-link.js
+   node -c buy-me-a-coffee/coffee-upi.js && node -c share-link/share-link.js
    ```
 4. Push your branch to your fork:
    ```bash

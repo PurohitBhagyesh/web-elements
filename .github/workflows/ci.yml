@@ -23,8 +23,6 @@ jobs:
         run: |
           node -c buy-me-a-coffee/coffee-upi.js
           node -c share-link/share-link.js
-          node -c coffee-upi.js
-          node -c share-link.js
 
       - name: Check Structure and Core Files
         run: |
