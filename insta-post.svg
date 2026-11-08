@@ -1,77 +1,68 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
   <defs>
     <!-- Background Canvas Gradient -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06080d"/>
-      <stop offset="45%" stop-color="#090d15"/>
-      <stop offset="100%" stop-color="#040609"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070a"/>
+      <stop offset="50%" stop-color="#080c11"/>
+      <stop offset="100%" stop-color="#030406"/>
     </linearGradient>
 
-    <!-- Emerald Glow Gradient -->
-    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Emerald / Matcha Gradient -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#22c55e"/>
       <stop offset="100%" stop-color="#4ade80"/>
     </linearGradient>
 
-    <!-- 3D Sphere 1: Emerald Light Reflection -->
-    <radialGradient id="sphereEmerald" cx="32%" cy="28%" r="70%">
-      <stop offset="0%" stop-color="#86efac"/>
-      <stop offset="25%" stop-color="#22c55e"/>
-      <stop offset="65%" stop-color="#14532d"/>
-      <stop offset="100%" stop-color="#051f0f"/>
-    </radialGradient>
-
-    <!-- 3D Sphere 2: Deep Cyan / Azure Light Reflection -->
-    <radialGradient id="sphereAzure" cx="30%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#93c5fd"/>
-      <stop offset="28%" stop-color="#3b82f6"/>
-      <stop offset="70%" stop-color="#1e3a8a"/>
-      <stop offset="100%" stop-color="#08142f"/>
-    </radialGradient>
-
-    <!-- 3D Torus / Ring Gradient -->
-    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#22c55e" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.7"/>
+    <!-- Glass Card Gradients (Black & White Glass with Green Edge) -->
+    <linearGradient id="glassCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121721" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#0a0e16" stop-opacity="0.88"/>
     </linearGradient>
 
-    <!-- 3D Glass Layer Card Gradients with Bevel Highlight -->
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#171d2b" stop-opacity="0.92"/>
-      <stop offset="100%" stop-color="#0d111a" stop-opacity="0.92"/>
-    </linearGradient>
-
-    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.22)"/>
-      <stop offset="35%" stop-color="rgba(34,197,94,0.4)"/>
-      <stop offset="70%" stop-color="rgba(59,130,246,0.3)"/>
+    <linearGradient id="glassBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="50%" stop-color="rgba(34,197,94,0.35)"/>
       <stop offset="100%" stop-color="rgba(255,255,255,0.06)"/>
     </linearGradient>
 
-    <linearGradient id="subCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1a2233"/>
-      <stop offset="100%" stop-color="#101522"/>
+    <!-- Boba Liquid Gradient (Matcha Milk Tea Style) -->
+    <linearGradient id="bobaLiquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15803d" stop-opacity="0.25"/>
+      <stop offset="40%" stop-color="#166534" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#052e16" stop-opacity="0.85"/>
     </linearGradient>
 
-    <!-- Soft Depth Ambient Glows -->
-    <radialGradient id="ambGreen" cx="20%" cy="22%" r="48%">
-      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.18"/>
+    <!-- Boba Pearl Gradient -->
+    <radialGradient id="bobaPearl" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#14532d"/>
+      <stop offset="100%" stop-color="#020804"/>
+    </radialGradient>
+
+    <!-- Straw Gradient -->
+    <linearGradient id="strawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+
+    <!-- Soft Ambient Lights -->
+    <radialGradient id="glowTopLeft" cx="20%" cy="15%" r="45%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.16"/>
       <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
     </radialGradient>
 
-    <radialGradient id="ambBlue" cx="80%" cy="60%" r="50%">
-      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.14"/>
-      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    <radialGradient id="glowBoba" cx="80%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- 3D Drop Shadows -->
-    <filter id="shadow3D" x="-15%" y="-15%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.6"/>
+    <!-- Filter for Soft Shadows -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.6"/>
     </filter>
 
-    <filter id="glowSubtle" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="30"/>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="24"/>
     </filter>
 
     <style>
@@ -80,220 +71,194 @@
     </style>
   </defs>
 
-  <!-- Canvas Background with Depth Atmosphere -->
-  <rect width="1080" height="1350" fill="url(#bgGrad)"/>
-  <rect width="1080" height="1350" fill="url(#ambGreen)"/>
-  <rect width="1080" height="1350" fill="url(#ambBlue)"/>
+  <!-- Deep Black Background Canvas -->
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+  <rect width="1080" height="1350" fill="url(#glowTopLeft)"/>
+  <rect width="1080" height="1350" fill="url(#glowBoba)"/>
 
-  <!-- 3D FLOATING BACKGROUND GEOMETRIC ELEMENTS -->
-  <!-- 3D Isometric Floating Ring (Top Right) -->
-  <g transform="translate(860, 200) rotate(28)" opacity="0.8">
-    <ellipse cx="0" cy="0" rx="90" ry="40" fill="none" stroke="url(#ringGrad)" stroke-width="12" filter="url(#glowSubtle)"/>
-    <ellipse cx="0" cy="0" rx="90" ry="40" fill="none" stroke="url(#ringGrad)" stroke-width="7"/>
+  <!-- ===================================================================== -->
+  <!-- AESTHETIC BACKGROUND: STYLIZED BOBA TEA ART (RIGHT SIDE)               -->
+  <!-- ===================================================================== -->
+  <g transform="translate(680, 240)" opacity="0.45">
+    <!-- Ambient Behind Boba -->
+    <circle cx="160" cy="400" r="220" fill="url(#greenGrad)" opacity="0.12" filter="url(#softGlow)"/>
+
+    <!-- Boba Straw (Diagonal Angled Up) -->
+    <g transform="rotate(-18, 160, 100)">
+      <rect x="148" y="-60" width="28" height="360" rx="14" fill="url(#strawGrad)" opacity="0.7"/>
+      <line x1="158" y1="-50" x2="158" y2="280" stroke="#ffffff" stroke-width="2" opacity="0.35"/>
+    </g>
+
+    <!-- Boba Glass Cup Body -->
+    <!-- Cup Rim / Lid -->
+    <ellipse cx="160" cy="110" rx="140" ry="24" fill="#1e293b" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+    <ellipse cx="160" cy="106" rx="134" ry="20" fill="#0f172a" stroke="#22c55e" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Tapered Glass Cup Outline & Liquid Fill -->
+    <path d="M26 110 L60 560 Q64 590 94 590 L226 590 Q256 590 260 560 L294 110 Z"
+          fill="url(#bobaLiquid)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+
+    <!-- Ice Cubes inside Boba -->
+    <rect x="90" y="190" width="56" height="56" rx="12" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" transform="rotate(12, 118, 218)"/>
+    <rect x="170" y="240" width="60" height="60" rx="12" fill="none" stroke="rgba(74,222,128,0.25)" stroke-width="1.5" transform="rotate(-18, 200, 270)"/>
+
+    <!-- Boba Pearls (Glossy Floating Spheres at Bottom) -->
+    <circle cx="100" cy="520" r="20" fill="url(#bobaPearl)"/>
+    <circle cx="140" cy="540" r="22" fill="url(#bobaPearl)"/>
+    <circle cx="185" cy="535" r="21" fill="url(#bobaPearl)"/>
+    <circle cx="225" cy="515" r="19" fill="url(#bobaPearl)"/>
+
+    <circle cx="115" cy="480" r="20" fill="url(#bobaPearl)"/>
+    <circle cx="160" cy="495" r="22" fill="url(#bobaPearl)"/>
+    <circle cx="205" cy="475" r="20" fill="url(#bobaPearl)"/>
+
+    <circle cx="135" cy="445" r="19" fill="url(#bobaPearl)"/>
+    <circle cx="178" cy="450" r="21" fill="url(#bobaPearl)"/>
+
+    <!-- Specular Glass Highlights (Reflections) -->
+    <path d="M46 140 L74 530" stroke="#ffffff" stroke-width="3.5" opacity="0.25" stroke-linecap="round"/>
+    <path d="M54 150 L78 480" stroke="#ffffff" stroke-width="1.5" opacity="0.15" stroke-linecap="round"/>
   </g>
 
-  <!-- 3D Sphere 1 (Top Left Ambient Floating Object) -->
-  <g transform="translate(100, 150)">
-    <circle cx="0" cy="0" r="46" fill="url(#sphereEmerald)" filter="url(#shadow3D)"/>
-    <ellipse cx="-12" cy="-14" rx="14" ry="7" fill="#ffffff" opacity="0.35" transform="rotate(-30, -12, -14)"/>
-  </g>
+  <!-- ===================================================================== -->
+  <!-- TOP BAR                                                               -->
+  <!-- ===================================================================== -->
+  <g transform="translate(80, 80)">
+    <!-- Brand Pill -->
+    <rect width="180" height="38" rx="19" fill="#0d1117" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <circle cx="20" cy="19" r="4.5" fill="#22c55e"/>
+    <text x="34" y="23.5" fill="#f8fafc" class="sans" font-size="12" font-weight="700" letter-spacing="0.08em">WEB ELEMENTS</text>
 
-  <!-- 3D Sphere 2 (Middle Right Floating Accent) -->
-  <g transform="translate(970, 780)">
-    <circle cx="0" cy="0" r="54" fill="url(#sphereAzure)" filter="url(#shadow3D)"/>
-    <ellipse cx="-14" cy="-16" rx="16" ry="8" fill="#ffffff" opacity="0.4" transform="rotate(-30, -14, -16)"/>
-  </g>
-
-  <!-- 3D Floating Cube / Prism Accent (Bottom Left) -->
-  <g transform="translate(110, 1100) rotate(16)" opacity="0.6">
-    <polygon points="0,-36 32,-18 32,22 0,4 0,-36" fill="#1b2434"/>
-    <polygon points="0,-36 -32,-18 -32,22 0,4 0,-36" fill="#101622"/>
-    <polygon points="0,4 32,22 0,40 -32,22" fill="#22c55e" opacity="0.5"/>
-  </g>
-
-  <!-- TOP HEADER BAR -->
-  <g transform="translate(80, 72)">
-    <!-- Brand Pill with 3D Depth -->
-    <rect width="186" height="40" rx="20" fill="#121722" stroke="rgba(255,255,255,0.14)" stroke-width="1.2" filter="url(#shadow3D)"/>
-    <circle cx="22" cy="20" r="5" fill="#22c55e"/>
-    <text x="36" y="25" fill="#f8fafc" class="sans" font-size="12.5" font-weight="700" letter-spacing="0.08em">WEB ELEMENTS</text>
-
-    <!-- Developer Profile Pill -->
-    <g transform="translate(620, 0)">
-      <rect width="300" height="40" rx="20" fill="#121722" stroke="rgba(255,255,255,0.14)" stroke-width="1.2" filter="url(#shadow3D)"/>
-      <path d="M20 20c0-4.42-3.58-8-8-8s-8 3.58-8 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.69-.01-1.36-2.22.48-2.69-1.07-2.69-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.14 0 3.07-1.87 3.75-3.65 3.95.29.25.54.74.54 1.49 0 1.07-.01 1.94-.01 2.2 0 .21.14.46.55.38A8.01 8.01 0 0020 20z" fill="#94a3b8" transform="translate(14, 0) scale(0.9)"/>
-      <text x="50" y="25" fill="#94a3b8" class="mono" font-size="12" font-weight="600">github.com/PurohitBhagyesh</text>
+    <!-- Sub Tag -->
+    <g transform="translate(680, 0)">
+      <rect width="240" height="38" rx="19" fill="#0d1117" stroke="rgba(34,197,94,0.3)" stroke-width="1"/>
+      <text x="120" y="23.5" fill="#4ade80" class="sans" font-size="11.5" font-weight="700" text-anchor="middle" letter-spacing="0.06em">FOR INDIE DEVELOPERS</text>
     </g>
   </g>
 
-  <!-- HERO TITLE AREA -->
-  <g transform="translate(80, 146)">
-    <text x="0" y="24" fill="#22c55e" class="sans" font-size="12.5" font-weight="800" letter-spacing="0.14em">PLUG &amp; PLAY FOR INDIE DEVELOPERS</text>
+  <!-- ===================================================================== -->
+  <!-- HERO TITLE SECTION                                                    -->
+  <!-- ===================================================================== -->
+  <g transform="translate(80, 160)">
+    <text x="0" y="24" fill="#22c55e" class="sans" font-size="12.5" font-weight="800" letter-spacing="0.14em">ZERO DEPENDENCIES • PURE VANILLA</text>
     <text x="0" y="80" fill="#ffffff" class="sans" font-size="52" font-weight="900" letter-spacing="-0.03em">Buy Me a Coffee (UPI)</text>
     <text x="0" y="118" fill="#94a3b8" class="sans" font-size="18" font-weight="400">
-      Zero platform fees. Instant peer-to-peer bank settlement.
+      Zero platform fees. Direct peer-to-peer settlement.
     </text>
   </g>
 
-  <!-- 3D LAYERED SHOWCASE CARD (BUY ME A COFFEE) -->
-  <g transform="translate(80, 295)" filter="url(#shadow3D)">
-    <!-- Main Card Body with Metallic Edge -->
-    <rect width="920" height="490" rx="24" fill="url(#cardGrad)" stroke="url(#cardBorder)" stroke-width="1.8"/>
+  <!-- ===================================================================== -->
+  <!-- 3 AESTHETIC ELEMENTS / CARDS                                          -->
+  <!-- ===================================================================== -->
 
-    <!-- Top Accent Bevel Line -->
-    <line x1="28" y1="2" x2="892" y2="2" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- ELEMENT 1: BUY ME A COFFEE (UPI) -->
+  <g transform="translate(80, 310)" filter="url(#cardShadow)">
+    <rect width="920" height="230" rx="20" fill="url(#glassCard)" stroke="url(#glassBorder)" stroke-width="1.5"/>
+    <line x1="24" y1="2" x2="896" y2="2" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-linecap="round"/>
 
-    <!-- Left Content Column -->
-    <g transform="translate(48, 44)">
-      <!-- Eyebrow Badge -->
-      <rect width="170" height="30" rx="15" fill="rgba(34,197,94,0.14)" stroke="rgba(34,197,94,0.3)" stroke-width="1"/>
-      <text x="85" y="19" fill="#4ade80" class="sans" font-size="11.5" font-weight="800" text-anchor="middle">DIRECT UPI DONATION</text>
-
-      <text x="0" y="72" fill="#ffffff" class="sans" font-size="28" font-weight="800" letter-spacing="-0.02em">Peer-to-Peer Payments</text>
-      <text x="0" y="100" fill="#94a3b8" class="sans" font-size="15" font-weight="400">Scan with any mobile camera or 1-tap deep link directly on phone.</text>
-
-      <!-- Feature Bullets (Clean & No Emojis) -->
-      <g transform="translate(0, 134)">
-        <g transform="translate(0, 0)">
-          <circle cx="8" cy="8" r="4" fill="#22c55e"/>
-          <text x="24" y="12" fill="#e2e8f0" class="sans" font-size="14.5" font-weight="600">Dynamic amount-synced QR code in real time</text>
-        </g>
-        <g transform="translate(0, 32)">
-          <circle cx="8" cy="8" r="4" fill="#22c55e"/>
-          <text x="24" y="12" fill="#e2e8f0" class="sans" font-size="14.5" font-weight="600">1-Click app deep links for seamless mobile checkout</text>
-        </g>
-        <g transform="translate(0, 64)">
-          <circle cx="8" cy="8" r="4" fill="#22c55e"/>
-          <text x="24" y="12" fill="#e2e8f0" class="sans" font-size="14.5" font-weight="600">Live editable Payee Name &amp; UPI ID via UI or JS API</text>
-        </g>
-        <g transform="translate(0, 96)">
-          <circle cx="8" cy="8" r="4" fill="#22c55e"/>
-          <text x="24" y="12" fill="#e2e8f0" class="sans" font-size="14.5" font-weight="600">Zero merchant KYC • Zero intermediary platform lock-in</text>
-        </g>
-      </g>
-    </g>
-
-    <!-- Right 3D QR Code Display Platter -->
-    <g transform="translate(632, 40)" filter="url(#shadow3D)">
-      <rect width="244" height="268" rx="20" fill="url(#subCardBg)" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
-
-      <!-- QR Code Inner Plate -->
-      <g transform="translate(42, 28)">
-        <rect width="160" height="160" rx="12" fill="#ffffff"/>
-        <!-- QR Code Finders -->
-        <rect x="14" y="14" width="38" height="38" rx="6" fill="#000000"/>
-        <rect x="22" y="22" width="22" height="22" rx="3" fill="#ffffff"/>
-        <rect x="27" y="27" width="12" height="12" rx="2" fill="#000000"/>
-
-        <rect x="108" y="14" width="38" height="38" rx="6" fill="#000000"/>
-        <rect x="116" y="22" width="22" height="22" rx="3" fill="#ffffff"/>
-        <rect x="121" y="27" width="12" height="12" rx="2" fill="#000000"/>
-
-        <rect x="14" y="108" width="38" height="38" rx="6" fill="#000000"/>
-        <rect x="22" y="116" width="22" height="22" rx="3" fill="#ffffff"/>
-        <rect x="27" y="121" width="12" height="12" rx="2" fill="#000000"/>
-
-        <!-- Simulated Pattern Dots -->
-        <rect x="62" y="18" width="8" height="18" fill="#000"/>
-        <rect x="74" y="24" width="16" height="8" fill="#000"/>
-        <rect x="66" y="44" width="24" height="8" fill="#000"/>
-        <rect x="18" y="66" width="18" height="8" fill="#000"/>
-        <rect x="44" y="66" width="22" height="16" fill="#000"/>
-        <rect x="72" y="64" width="14" height="14" fill="#000"/>
-        <rect x="94" y="64" width="12" height="18" fill="#000"/>
-        <rect x="114" y="66" width="28" height="10" fill="#000"/>
-        <rect x="18" y="86" width="16" height="14" fill="#000"/>
-        <rect x="42" y="92" width="18" height="10" fill="#000"/>
-        <rect x="70" y="88" width="20" height="20" fill="#000"/>
-        <rect x="98" y="92" width="24" height="8" fill="#000"/>
-        <rect x="130" y="86" width="16" height="18" fill="#000"/>
-        <rect x="62" y="116" width="16" height="26" fill="#000"/>
-        <rect x="88" y="120" width="20" height="8" fill="#000"/>
-        <rect x="114" y="114" width="30" height="14" fill="#000"/>
-        <rect x="90" y="134" width="14" height="14" fill="#000"/>
-        <rect x="120" y="136" width="22" height="12" fill="#000"/>
+    <g transform="translate(40, 36)">
+      <!-- Eyebrow Tag -->
+      <g>
+        <rect width="180" height="28" rx="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.3)" stroke-width="1"/>
+        <text x="90" y="18" fill="#4ade80" class="sans" font-size="11" font-weight="800" text-anchor="middle">PEER-TO-PEER DONATION</text>
       </g>
 
-      <text x="122" y="222" fill="#f8fafc" class="sans" font-size="12" font-weight="700" text-anchor="middle">SCAN WITH ANY UPI APP</text>
-      <text x="122" y="244" fill="#4ade80" class="mono" font-size="11.5" font-weight="600" text-anchor="middle">upi://pay?cu=INR</text>
-    </g>
-
-    <!-- Supported UPI Apps Section (As Requested: Box that says "Supported UPI Apps") -->
-    <g transform="translate(48, 380)">
-      <line x1="0" y1="0" x2="824" y2="0" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-
-      <g transform="translate(0, 20)">
-        <!-- Clean Elegant Box: Supported UPI Apps -->
-        <rect width="824" height="58" rx="14" fill="url(#subCardBg)" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/>
-
-        <g transform="translate(24, 34)">
-          <!-- Left Label -->
-          <text x="0" y="2" fill="#ffffff" class="sans" font-size="14.5" font-weight="800" letter-spacing="0.04em">Supported UPI Apps</text>
-
-          <!-- Right Description -->
-          <text x="800" y="2" fill="#94a3b8" class="sans" font-size="13.5" font-weight="500" text-anchor="end">
-            FamApp • PhonePe • Google Pay • Paytm • Amazon Pay • WhatsApp • BHIM
-          </text>
-        </g>
-      </g>
-    </g>
-  </g>
-
-  <!-- CARD 2: NATIVE WEB SHARE LINK -->
-  <g transform="translate(80, 815)" filter="url(#shadow3D)">
-    <rect width="920" height="270" rx="24" fill="url(#cardGrad)" stroke="url(#cardBorder)" stroke-width="1.8"/>
-    <line x1="28" y1="2" x2="892" y2="2" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round"/>
-
-    <g transform="translate(48, 38)">
-      <rect width="180" height="30" rx="15" fill="rgba(59,130,246,0.14)" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
-      <text x="90" y="19" fill="#60a5fa" class="sans" font-size="11.5" font-weight="800" text-anchor="middle">VIRAL DISTRIBUTION</text>
-
-      <text x="0" y="74" fill="#ffffff" class="sans" font-size="28" font-weight="800" letter-spacing="-0.02em">Native Web Share Link</text>
-      <text x="0" y="104" fill="#94a3b8" class="sans" font-size="15" font-weight="400">
-        Invokes native OS share sheets on iOS, Android &amp; macOS. Includes 1-click clipboard copy.
+      <!-- Element Title -->
+      <text x="0" y="66" fill="#ffffff" class="sans" font-size="26" font-weight="800" letter-spacing="-0.02em">Buy Me a Coffee (UPI)</text>
+      <text x="0" y="96" fill="#94a3b8" class="sans" font-size="14.5" font-weight="400">
+        100% direct bank transfer. Dynamic real-time calculation. Zero intermediary cuts.
       </text>
 
-      <!-- Channels Row with 3D Pills -->
-      <g transform="translate(0, 136)">
-        <rect x="0" y="0" width="118" height="38" rx="10" fill="#181e2b" stroke="rgba(255,255,255,0.08)"/>
-        <text x="59" y="24" fill="#f8fafc" class="sans" font-size="12.5" font-weight="600" text-anchor="middle">AirDrop</text>
-
-        <rect x="130" y="0" width="134" height="38" rx="10" fill="#181e2b" stroke="rgba(255,255,255,0.08)"/>
-        <text x="197" y="24" fill="#22c55e" class="sans" font-size="12.5" font-weight="600" text-anchor="middle">WhatsApp</text>
-
-        <rect x="276" y="0" width="118" height="38" rx="10" fill="#181e2b" stroke="rgba(255,255,255,0.08)"/>
-        <text x="335" y="24" fill="#f8fafc" class="sans" font-size="12.5" font-weight="600" text-anchor="middle">X / Twitter</text>
-
-        <rect x="406" y="0" width="120" height="38" rx="10" fill="#181e2b" stroke="rgba(255,255,255,0.08)"/>
-        <text x="466" y="24" fill="#60a5fa" class="sans" font-size="12.5" font-weight="600" text-anchor="middle">LinkedIn</text>
-
-        <rect x="538" y="0" width="118" height="38" rx="10" fill="#181e2b" stroke="rgba(255,255,255,0.08)"/>
-        <text x="597" y="24" fill="#f97316" class="sans" font-size="12.5" font-weight="600" text-anchor="middle">Reddit</text>
-
-        <rect x="668" y="0" width="156" height="38" rx="10" fill="#181e2b" stroke="rgba(34,197,94,0.3)"/>
-        <text x="746" y="24" fill="#4ade80" class="sans" font-size="12.5" font-weight="700" text-anchor="middle">1-Click Copy</text>
+      <!-- Supported UPI Apps Box (As Requested) -->
+      <g transform="translate(0, 118)">
+        <rect width="840" height="42" rx="10" fill="#0d1117" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <text x="20" y="26" fill="#4ade80" class="sans" font-size="12" font-weight="800" letter-spacing="0.04em">Supported UPI Apps</text>
+        <text x="820" y="26" fill="#94a3b8" class="sans" font-size="12" font-weight="500" text-anchor="end">
+          FamApp • PhonePe • Google Pay • Paytm • Amazon Pay • WhatsApp • BHIM
+        </text>
       </g>
     </g>
   </g>
 
-  <!-- CLEAN BOTTOM BAR: REPO LINK & PROFILE (NO BASH, NO STAR) -->
-  <g transform="translate(80, 1115)" filter="url(#shadow3D)">
-    <rect width="920" height="120" rx="20" fill="url(#subCardBg)" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+  <!-- ELEMENT 2: NATIVE WEB SHARE LINK -->
+  <g transform="translate(80, 565)" filter="url(#cardShadow)">
+    <rect width="920" height="230" rx="20" fill="url(#glassCard)" stroke="url(#glassBorder)" stroke-width="1.5"/>
+    <line x1="24" y1="2" x2="896" y2="2" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-linecap="round"/>
 
-    <g transform="translate(44, 38)">
-      <text x="0" y="20" fill="#64748b" class="sans" font-size="11.5" font-weight="700" letter-spacing="0.08em">OPEN SOURCE REPOSITORY</text>
-      <text x="0" y="50" fill="#ffffff" class="mono" font-size="20" font-weight="700">github.com/PurohitBhagyesh/web-elements</text>
+    <g transform="translate(40, 36)">
+      <!-- Eyebrow Tag -->
+      <g>
+        <rect width="170" height="28" rx="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.3)" stroke-width="1"/>
+        <text x="85" y="18" fill="#4ade80" class="sans" font-size="11" font-weight="800" text-anchor="middle">DEVICE &amp; SOCIAL SHARE</text>
+      </g>
 
-      <g transform="translate(620, -4)">
-        <rect width="210" height="54" rx="14" fill="#182030" stroke="rgba(34,197,94,0.3)" stroke-width="1.2"/>
-        <text x="105" y="23" fill="#94a3b8" class="sans" font-size="10.5" font-weight="600" text-anchor="middle">DEVELOPER</text>
-        <text x="105" y="42" fill="#22c55e" class="sans" font-size="14.5" font-weight="800" text-anchor="middle">@PurohitBhagyesh</text>
+      <!-- Element Title -->
+      <text x="0" y="66" fill="#ffffff" class="sans" font-size="26" font-weight="800" letter-spacing="-0.02em">Native Web Share Link</text>
+      <text x="0" y="96" fill="#94a3b8" class="sans" font-size="14.5" font-weight="400">
+        Triggers native device sheets on iOS, Android &amp; macOS Safari. 1-click clipboard copy.
+      </text>
+
+      <!-- Channels Pills -->
+      <g transform="translate(0, 118)">
+        <rect width="840" height="42" rx="10" fill="#0d1117" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <text x="20" y="26" fill="#ffffff" class="sans" font-size="12" font-weight="700">Quick Channels</text>
+        <text x="820" y="26" fill="#94a3b8" class="sans" font-size="12" font-weight="500" text-anchor="end">
+          AirDrop • Messages • WhatsApp • X / Twitter • LinkedIn • Reddit • Telegram
+        </text>
       </g>
     </g>
   </g>
 
-  <!-- FOOTER COPYRIGHT -->
-  <text x="540" y="1285" fill="#475569" class="sans" font-size="12" font-weight="600" text-anchor="middle">
-    Free &amp; Open Source MIT • Zero Runtime Dependencies • Vanilla JavaScript &amp; CSS3
+  <!-- ELEMENT 3: ZERO-DEPENDENCY RUNTIME & EDITABILITY -->
+  <g transform="translate(80, 820)" filter="url(#cardShadow)">
+    <rect width="920" height="230" rx="20" fill="url(#glassCard)" stroke="url(#glassBorder)" stroke-width="1.5"/>
+    <line x1="24" y1="2" x2="896" y2="2" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-linecap="round"/>
+
+    <g transform="translate(40, 36)">
+      <!-- Eyebrow Tag -->
+      <g>
+        <rect width="190" height="28" rx="14" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.3)" stroke-width="1"/>
+        <text x="95" y="18" fill="#4ade80" class="sans" font-size="11" font-weight="800" text-anchor="middle">LIVE DYNAMIC EDITING</text>
+      </g>
+
+      <!-- Element Title -->
+      <text x="0" y="66" fill="#ffffff" class="sans" font-size="26" font-weight="800" letter-spacing="-0.02em">Pure Vanilla Components</text>
+      <text x="0" y="96" fill="#94a3b8" class="sans" font-size="14.5" font-weight="400">
+        Zero npm packages. In-modal editing for Name, UPI ID &amp; Link. Light &amp; dark mode ready.
+      </text>
+
+      <!-- Spec Pills -->
+      <g transform="translate(0, 118)">
+        <rect width="840" height="42" rx="10" fill="#0d1117" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <text x="20" y="26" fill="#4ade80" class="sans" font-size="12" font-weight="800">Architecture</text>
+        <text x="820" y="26" fill="#94a3b8" class="sans" font-size="12" font-weight="500" text-anchor="end">
+          Pure JS &amp; CSS3 • ~4 KB Lightweight Bundle • CSS Custom Properties
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- SMALL MINIMAL FOOTER                                                  -->
+  <!-- ===================================================================== -->
+  <g transform="translate(80, 1140)">
+    <line x1="0" y1="0" x2="920" y2="0" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+    <g transform="translate(0, 36)">
+      <!-- Left: Small Clean Repo URL -->
+      <text x="0" y="16" fill="#64748b" class="sans" font-size="11" font-weight="700" letter-spacing="0.08em">OPEN SOURCE ON GITHUB</text>
+      <text x="0" y="44" fill="#ffffff" class="mono" font-size="18" font-weight="700">github.com/PurohitBhagyesh/web-elements</text>
+
+      <!-- Right: Developer Handle -->
+      <g transform="translate(680, 0)">
+        <text x="240" y="16" fill="#64748b" class="sans" font-size="11" font-weight="700" text-anchor="end" letter-spacing="0.08em">DEVELOPER</text>
+        <text x="240" y="44" fill="#22c55e" class="sans" font-size="18" font-weight="800" text-anchor="end">@PurohitBhagyesh</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom License Footnote -->
+  <text x="540" y="1290" fill="#475569" class="sans" font-size="11" font-weight="600" text-anchor="middle">
+    Free &amp; Open Source MIT • Zero Runtime Dependencies
   </text>
 </svg>
