@@ -1,7 +1,7 @@
 /**
  * Coffee UPI - Plug & Play Buy Me A Coffee (UPI) Floating Widget
  * Supports: FamApp, Google Pay, PhonePe, Paytm, Amazon Pay, WhatsApp, BHIM
- * Author: Bhagyesh Purohit (github.com/PurohitBhagyesh)
+ * Author: Web Elements (github.com/PurohitBhagyesh)
  * License: MIT
  */
 
@@ -9,8 +9,8 @@
   'use strict';
 
   const DEFAULT_CONFIG = {
-    upiId: 'purohitbhagyesh@fam',
-    payeeName: 'Bhagyesh Purohit',
+    upiId: 'developer@upi',
+    payeeName: 'Developer Name',
     defaultAmount: 50,
     presets: [20, 50, 100, 200],
     title: 'Buy me a coffee',
@@ -195,11 +195,11 @@
           <div class="cupi-edit-drawer" style="display: none;">
             <div class="cupi-edit-field">
               <label>Payee Name</label>
-              <input type="text" class="cupi-edit-name-input" value="${payeeName}" placeholder="e.g. Bhagyesh Purohit" />
+              <input type="text" class="cupi-edit-name-input" value="${payeeName}" placeholder="e.g. Developer Name" />
             </div>
             <div class="cupi-edit-field">
               <label>UPI ID (VPA)</label>
-              <input type="text" class="cupi-edit-upi-input" value="${upiId}" placeholder="e.g. username@fam" />
+              <input type="text" class="cupi-edit-upi-input" value="${upiId}" placeholder="e.g. developer@upi" />
             </div>
             <div class="cupi-edit-actions">
               <button type="button" class="cupi-edit-save-btn">Save</button>

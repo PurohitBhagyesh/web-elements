@@ -3,7 +3,7 @@
 # ==============================================================================
 # Web Elements - 1-Line Installer for Indie Developers
 # Repo: https://github.com/PurohitBhagyesh/web-elements
-# Author: Bhagyesh Purohit
+# Author: Web Elements Contributors
 # License: MIT
 # ==============================================================================
 

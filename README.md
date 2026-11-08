@@ -154,8 +154,8 @@ Update widget configuration anytime at runtime without reloading:
 
 ```javascript
 // Edit Coffee UPI on the fly
-coffee.setPayeeName('Bhagyesh Purohit');
-coffee.setUpiId('purohitbhagyesh@fam');
+coffee.setPayeeName('Developer Name');
+coffee.setUpiId('developer@upi');
 coffee.setAmount(100);
 coffee.open(); // Programmatically open modal
 
@@ -198,4 +198,4 @@ Contributions, feature requests, and suggestions are welcome! Check out our [Con
 
 Open source and available under the [MIT License](LICENSE).
 
-Copyright © 2026 [**Bhagyesh Purohit**](https://github.com/PurohitBhagyesh).
+Copyright © 2026 [**Web Elements Contributors**](https://github.com/PurohitBhagyesh/web-elements).

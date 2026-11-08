@@ -77,5 +77,5 @@ Supports light and dark mode automatically. Customize via CSS variables:
 
 ## 📄 License
 
-MIT © [Bhagyesh Purohit](https://github.com/PurohitBhagyesh)
+MIT © [Web Elements Contributors](https://github.com/PurohitBhagyesh/web-elements)
 

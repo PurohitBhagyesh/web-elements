@@ -13,8 +13,8 @@ We provide security updates and fixes for the latest release on the `main` branc
 
 If you discover a security vulnerability within Web Elements, please do not disclose it publicly via GitHub Issues.
 
-Instead, please report security concerns directly to the project maintainer:
-- Maintainer: **Bhagyesh Purohit**
+Instead, please report security concerns directly:
+- Maintainer: **Web Elements Maintainers**
 - Contact: Open a private security advisory on GitHub or contact via [GitHub Profile](https://github.com/PurohitBhagyesh).
 
 Please include:

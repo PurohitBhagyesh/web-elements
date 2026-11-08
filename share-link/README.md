@@ -68,5 +68,5 @@ share.open();
 
 ## 📄 License
 
-MIT © [Bhagyesh Purohit](https://github.com/PurohitBhagyesh)
+MIT © [Web Elements Contributors](https://github.com/PurohitBhagyesh/web-elements)
 

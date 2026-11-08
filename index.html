@@ -460,8 +460,8 @@
           <button class="code-copy-btn" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'">Copy</button>
           <code>&lt;link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css"&gt;
 &lt;script src="buy-me-a-coffee/coffee-upi.js"
-  data-upi="purohitbhagyesh@fam"
-  data-name="Bhagyesh Purohit"&gt;&lt;/script&gt;</code>
+  data-upi="developer@upi"
+  data-name="Developer Name"&gt;&lt;/script&gt;</code>
         </div>
       </div>
 
@@ -526,12 +526,12 @@
           <div class="playground-form">
             <div class="form-group">
               <label for="cfgPayeeName">Payee Name</label>
-              <input type="text" id="cfgPayeeName" value="Bhagyesh Purohit" placeholder="e.g. Bhagyesh Purohit">
+              <input type="text" id="cfgPayeeName" value="Developer Name" placeholder="e.g. Developer Name">
             </div>
 
             <div class="form-group">
               <label for="cfgUpiId">UPI ID (VPA)</label>
-              <input type="text" id="cfgUpiId" value="purohitbhagyesh@fam" placeholder="e.g. username@fam">
+              <input type="text" id="cfgUpiId" value="developer@upi" placeholder="e.g. developer@upi">
             </div>
 
             <div class="form-group">
@@ -574,7 +574,7 @@
 
             <div class="form-group">
               <label for="cfgShareText">Share Description / Text</label>
-              <input type="text" id="cfgShareText" value="Check out these free plug-and-play web elements by Bhagyesh Purohit!" placeholder="Message">
+              <input type="text" id="cfgShareText" value="Check out these free plug-and-play web elements for indie developers!" placeholder="Message">
             </div>
 
             <div class="form-actions">
@@ -607,8 +607,8 @@
   <script>
     // Initialize Both Live Widgets Programmatically
     const coffeeWidget = CoffeeUPI.init({
-      upiId: 'purohitbhagyesh@fam',
-      payeeName: 'Bhagyesh Purohit',
+      upiId: 'developer@upi',
+      payeeName: 'Developer Name',
       defaultAmount: 50,
       presets: [20, 50, 100, 200],
       position: 'bottom-left'
@@ -616,7 +616,7 @@
 
     const shareWidget = ShareLink.init({
       title: 'Web Elements - Modern UPI & Web Share Widgets',
-      text: 'Check out these free plug-and-play web elements by Bhagyesh Purohit!',
+      text: 'Check out these free plug-and-play web elements for indie developers!',
       url: 'https://github.com/PurohitBhagyesh/web-elements',
       position: 'bottom-right'
     });
@@ -639,8 +639,8 @@
     const btnCopyCoffeeSnippet = document.getElementById('btnCopyCoffeeSnippet');
 
     function updateCoffeeConfig() {
-      const name = inputPayeeName.value.trim() || 'Bhagyesh Purohit';
-      const upi = inputUpiId.value.trim() || 'purohitbhagyesh@fam';
+      const name = inputPayeeName.value.trim() || 'Developer Name';
+      const upi = inputUpiId.value.trim() || 'developer@upi';
       const amt = parseInt(inputDefaultAmt.value, 10) || 50;
 
       coffeeWidget.updateConfig({
@@ -661,8 +661,8 @@
     });
 
     btnResetCoffee.addEventListener('click', () => {
-      inputPayeeName.value = 'Bhagyesh Purohit';
-      inputUpiId.value = 'purohitbhagyesh@fam';
+      inputPayeeName.value = 'Developer Name';
+      inputUpiId.value = 'developer@upi';
       inputDefaultAmt.value = 50;
       updateCoffeeConfig();
     });
@@ -707,7 +707,7 @@
     btnResetShare.addEventListener('click', () => {
       inputShareUrl.value = 'https://github.com/PurohitBhagyesh/web-elements';
       inputShareTitle.value = 'Web Elements - Modern UPI & Web Share Widgets';
-      inputShareText.value = 'Check out these free plug-and-play web elements by Bhagyesh Purohit!';
+      inputShareText.value = 'Check out these free plug-and-play web elements for indie developers!';
       updateShareConfig();
     });
 

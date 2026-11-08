@@ -1,7 +1,7 @@
 /**
  * Share Link - Plug & Play Web Share & Social Sharing Floating Widget
  * Features: Native Web Share API, 1-Click Clipboard Copy, Social Quicklinks (WhatsApp, X, LinkedIn, Reddit, Telegram)
- * Author: Bhagyesh Purohit (github.com/PurohitBhagyesh)
+ * Author: Web Elements (github.com/PurohitBhagyesh)
  * License: MIT
  */
 
