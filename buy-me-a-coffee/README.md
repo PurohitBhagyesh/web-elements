@@ -1,7 +1,7 @@
 # ☕ Buy Me a Coffee (UPI) for Indie Developers
 
-> **Zero transaction fees. Zero KYC paperwork. Instant settlement directly to your bank account.**  
-> A plug-and-play, floating donation widget crafted specifically for indie hackers, open-source maintainers, and creators.
+> Zero transaction fees. Zero KYC paperwork. Instant settlement directly to your bank account.
+> A plug-and-play, floating donation widget built for indie hackers, creators, and open-source maintainers.
 
 [![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla_ES6+-f59e0b.svg)](coffee-upi.js)
 [![CSS3 Variables](https://img.shields.io/badge/CSS-Modern_Variables-38bdf8.svg)](coffee-upi.css)
@@ -9,24 +9,26 @@
 
 ---
 
-## ⚡ Why Indie Developers Love This
+## ⚡ Why creators use this
 
-Traditional donation tools take a 5% platform fee plus international card conversion fees, require tedious merchant KYC, and hold your earnings for weeks.
+Traditional donation tools often take platform commissions, add checkout friction, and require merchant onboarding.
 
-With **Buy Me a Coffee (UPI)**:
-- 💸 **0% Platform Fees**: Every rupee paid goes 100% directly to your bank.
-- ⚡ **Instant Settlement**: Instant peer-to-peer UPI transfer within seconds.
-- 📱 **All Major UPI Apps**: 1-click links for FamApp, PhonePe, Google Pay, Paytm, Amazon Pay, WhatsApp Pay.
-- 📷 **Real-Time Dynamic QR Code**: Auto-generates a scannable QR code matching the exact amount chosen by the supporter.
-- ✎ **Live Editable Name & UPI ID**: Easily change your payee name or UPI ID programmatically or right inside the modal UI!
+With Buy Me a Coffee (UPI):
+
+- 💸 **0% platform fees**: every rupee goes directly to your bank account
+- ⚡ **Instant settlement**: peer-to-peer UPI transfer without delays
+- 📱 **Major UPI app deep links**: FamApp, PhonePe, Google Pay, Paytm, Amazon Pay, WhatsApp Pay
+- 📷 **Dynamic QR code**: auto-generated QR based on the donation amount selected
+- ✎ **Editable payee details**: change your UPI ID or name live from JavaScript or inside the widget
+- 🖥️ **Desktop fallback**: QR code + copy-to-clipboard support for laptop users
 
 ---
 
 ## 🚀 Quickstart
 
-### 1. HTML Script Tag
+### 1. HTML script tag
 
-Add the CSS and script tag anywhere in your HTML:
+Add the CSS and JS anywhere in your page:
 
 ```html
 <link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css">
@@ -51,7 +53,6 @@ const coffee = CoffeeUPI.init({
   subtitle: 'Every coffee fuels continuous development.'
 });
 
-// Dynamically edit anytime:
 coffee.setPayeeName('New Name');
 coffee.setUpiId('newupi@oksbi');
 coffee.setAmount(100);
@@ -62,7 +63,7 @@ coffee.open();
 
 ## 🎨 Theming
 
-Supports light and dark mode automatically. Customize via CSS variables:
+This widget supports both dark and light modes automatically with CSS variables:
 
 ```css
 :root {
@@ -75,7 +76,15 @@ Supports light and dark mode automatically. Customize via CSS variables:
 
 ---
 
+## 🧩 Example use cases
+
+- indie SaaS launch support
+- open-source maintainer tips
+- creator memberships and one-time donations
+- personal portfolio or blog contributions
+
+---
+
 ## 📄 License
 
 MIT © [Web Elements Contributors](https://github.com/PurohitBhagyesh/web-elements)
-

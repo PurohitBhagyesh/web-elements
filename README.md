@@ -2,7 +2,7 @@
 
 # 🌐 Web Elements for Indie Developers & Creators
 
-**Zero-dependency floating web widgets for indie developers & creators:** 1-click direct UPI donations and native Web Share dialogs with social quicklinks.
+**Zero-dependency floating web widgets for indie developers & creators:** 1-click direct UPI donations (0% platform fees, instant bank settlement) and native Web Share dialogs with social quicklinks.
 
 <br/>
 
@@ -33,18 +33,18 @@ Web Elements is a lightweight toolkit of floating widgets built for creators, in
 
 ## 📊 Repository snapshot
 
-This repo is primarily built with a lightweight frontend stack:
+The project is primarily front-end code with a lightweight stack:
 
 - JavaScript: 47.7%
 - HTML: 26.1%
 - CSS: 21.7%
 - Shell: 4.5%
 
-The implementation is intentionally simple: vanilla JavaScript + CSS + HTML with no external runtime dependencies.
+This reflects a simple, dependency-light implementation using vanilla JavaScript, HTML, and CSS.
 
 ---
 
-## ⚡ 1-Line Bash Install (Indie Dev Fast Track)
+## ⚡ 1-Line Bash Install
 
 Install directly into any project (`Next.js`, `Vite`, `React`, `Astro`, `Vue`, or static HTML) in one command:
 
@@ -60,72 +60,67 @@ curl -sSL https://raw.githubusercontent.com/PurohitBhagyesh/web-elements/main/in
 
 ```text
 web-elements/
-├── ☕ buy-me-a-coffee/          # Buy Me a Coffee (UPI) for Indie Developers
-│   ├── coffee-upi.js           # Lightweight logic & dynamic QR code engine
-│   ├── coffee-upi.css          # Modern dark/light modal with smooth spring animations
-│   └── README.md               # Dedicated component documentation
+├── ☕ buy-me-a-coffee/          # Direct UPI donation widget
+│   ├── coffee-upi.js           # Donation modal logic + QR generation
+│   ├── coffee-upi.css          # Floating widget styling
+│   └── README.md               # Component docs
 │
-├── 🚀 share-link/              # Native Web Share Link for Indie Developers
-│   ├── share-link.js           # Web Share API + clipboard fallback + social quicklinks
-│   ├── share-link.css          # Sleek floating pill & share sheet styling
-│   └── README.md               # Dedicated component documentation
+├── 🚀 share-link/              # Native Web Share widget
+│   ├── share-link.js           # Share sheet + clipboard fallback + quicklinks
+│   ├── share-link.css          # Floating share button styling
+│   └── README.md               # Component docs
 │
-├── install.sh                  # 1-line bash installer for terminal workflows
-├── index.html                  # Interactive live playground & configurator
-├── CONTRIBUTING.md             # Developer guidelines & contribution flow
-├── CODE_OF_CONDUCT.md         # Community standard
-├── SECURITY.md                 # Vulnerability reporting protocol
-├── LICENSE                     # Official MIT License
-└── README.md                   # Project overview and quickstart
+├── install.sh                  # 1-line bash installer
+├── index.html                  # Interactive demo and configurator
+├── CONTRIBUTING.md             # Contribution guidelines
+├── CODE_OF_CONDUCT.md         # Community standards
+├── SECURITY.md                 # Vulnerability reporting policy
+├── LICENSE                     # MIT License
+├── README.md                   # Project overview
+└── .github/                    # GitHub metadata and automation
 ```
 
 ---
 
-## 💡 Why Indie Developers Choose This
+## 💡 Why indie developers choose this
 
-| Feature | ☕ Web Elements (Coffee UPI) | Traditional Gateways (Stripe/Razorpay) | Third-Party Platforms (BuyMeACoffee) |
+| Feature | ☕ Web Elements (Coffee UPI) | Traditional Gateways | Third-Party Platforms |
 |---|---|---|---|
-| **Platform Commission** | **0% (Direct peer-to-peer UPI)** | 2% – 3% + GST | 5% platform cut + currency fx conversion |
-| **Payout Settlement** | **Instant (directly into your bank)** | T+2 to T+7 business days | Monthly threshold payout ($10 minimum) |
-| **Merchant KYC / Paperwork** | **None (use your existing personal UPI ID)** | Extensive business KYC & merchant account | Account creation & platform lock-in |
-| **Runtime Footprint** | **0 dependencies (~4 KB)** | 100+ KB heavy JS SDKs | Slow external iframe embeds & tracking scripts |
-| **Dark & Light Mode** | **Native CSS custom properties** | Custom theme CSS overrides required | Inflexible widget styling |
+| **Platform Commission** | **0%** | 2%–3% + GST | 5% platform cut |
+| **Settlement** | Instant bank transfer | T+2 to T+7 days | Monthly payout threshold |
+| **KYC / Paperwork** | None for personal UPI | Merchant onboarding | Account setup and lock-in |
+| **Runtime Footprint** | 0 external dependencies | Heavy SDKs | External iframe + tracking |
+| **Theme Control** | Native CSS variables | Custom overrides | Limited styling |
 
 ---
 
-## 📦 What's Inside
+## 📦 What's inside
 
-### 1. ☕ Buy Me a Coffee (UPI) (`buy-me-a-coffee/`)
+### 1. ☕ Buy Me a Coffee (UPI)
 
-Receive support directly from your users with zero middleman deductions:
+Receive support directly from users with zero middleman deductions:
 
-- **Instant Settlement**: Receive 100% of donations directly into your personal bank account.
-- **Dynamic Amount-Synced QR Code**: Automatically recalculates and renders a clean vector QR code matching the amount selected by your supporter.
-- **1-Click Mobile App Deep Links**:
-  - **FamApp**
-  - **PhonePe**
-  - **Google Pay / Tez**
-  - **Paytm**
-  - **Amazon Pay**
-  - **WhatsApp Pay**
-- **Live Editable Name & UPI ID**: Change your payee name or UPI VPA dynamically via JavaScript or using the built-in `✎` edit button inside the widget.
-- **Desktop Fallback**: Desktop visitors see an instant scannable QR code and 1-click clipboard copy with visual feedback.
+- Instant settlement into your personal bank account
+- Dynamic amount-synced QR code generation
+- 1-click UPI app deep links for common payment apps
+- Editable payee name and UPI ID
+- Desktop fallback with QR + clipboard copy
 
-### 2. 🚀 Native Web Share Link (`share-link/`)
+### 2. 🚀 Native Web Share Link
 
 Turn every visitor into an organic distribution channel:
 
-- **Native OS Share Sheet**: Integrates with the Level 2 Web Share API (`navigator.share`) for AirDrop, Messages, Mail, and system sheets on iOS, Android, and macOS Safari.
-- **1-Click Clipboard Copy**: One-tap URL copy with animated `Copied!` confirmation badge.
-- **Direct Social Quicklinks**: Pre-encoded 1-click sharing to WhatsApp, X (Twitter), LinkedIn, Reddit, and Telegram.
-- **Live Editable Link & Title**: Update the target share link, title, and description dynamically in real time.
-- **Accessible UX**: Screen reader friendly ARIA labels and keyboard dismissal with `Escape`.
+- Native share sheet support via `navigator.share`
+- One-tap copy link action with confirmation feedback
+- Direct social quicklinks for WhatsApp, X, LinkedIn, Reddit, and Telegram
+- Editable share title and copy text
+- Accessible and mobile-friendly UX
 
 ---
 
 ## 🚀 Quickstart
 
-### Option A: HTML Script Tag (Zero JS Code)
+### Option A: HTML script tag
 
 ```html
 <!-- 1. Buy Me a Coffee (UPI) -->
@@ -147,9 +142,7 @@ Turn every visitor into an organic distribution channel:
 </script>
 ```
 
----
-
-### Option B: JavaScript API (React / Vue / Next.js / Astro)
+### Option B: JavaScript API
 
 ```javascript
 // Initialize Coffee UPI
@@ -172,49 +165,45 @@ const share = ShareLink.init({
 
 ---
 
-## 🎛 Live Dynamic Editing
-
-Update widget configuration anytime at runtime without reloading:
+## 🎛 Live dynamic editing
 
 ```javascript
-// Edit Coffee UPI on the fly
 coffee.setPayeeName('Developer Name');
 coffee.setUpiId('developer@upi');
 coffee.setAmount(100);
-coffee.open(); // Programmatically open modal
+coffee.open();
 
-// Edit Share Link on the fly
 share.setUrl('https://mywebsite.com/new-feature');
 share.setTitle('Check out this new release!');
-share.open(); // Programmatically open sheet
+share.open();
 ```
 
 ---
 
-## 🎨 Theming & CSS Variables
+## 🎨 Theming & CSS variables
 
 ```css
 :root {
-  /* Coffee UPI Customization */
+  /* Coffee UPI */
   --cupi-accent: #22c55e;
   --cupi-bg: #121316;
   --cupi-surface: #1a1c22;
   --cupi-text: #f4f4f5;
 
-  /* Share Link Customization */
+  /* Share Link */
   --wshare-accent: #3b82f6;
   --wshare-surface: #1a1c22;
   --wshare-text: #f4f4f5;
 }
 ```
 
-Add `data-theme="light"` to `<html>` or `<body>` to automatically toggle clean light mode.
+Add `data-theme="light"` to `<html>` or `<body>` to enable a clean light-mode variant.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions, feature requests, and suggestions are welcome! Check out our [Contributing Guide](CONTRIBUTING.md) to get started.
+Contributions, feature requests, and suggestions are welcome. Check out our [Contributing Guide](CONTRIBUTING.md) to get started.
 
 ---
 
@@ -222,4 +211,4 @@ Contributions, feature requests, and suggestions are welcome! Check out our [Con
 
 Open source and available under the [MIT License](LICENSE).
 
-Copyright © 2026 [**Web Elements Contributors**](https://github.com/PurohitBhagyesh/web-elements).
+Copyright © 2026 [Web Elements Contributors](https://github.com/PurohitBhagyesh/web-elements).
