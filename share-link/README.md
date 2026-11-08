@@ -1,7 +1,7 @@
 # 🚀 Native Web Share Link for Indie Developers
 
-> **Native device share sheet, 1-click clipboard copy, and direct social quicklinks in one floating widget.**  
-> Boost viral loops and project distribution with zero third-party tracking scripts.
+> Native device share sheet, 1-click clipboard copy, and direct social quicklinks in one floating widget.
+> Designed to help creators and indie projects spread the word without heavy tracking scripts or third-party share SDKs.
 
 [![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla_ES6+-f59e0b.svg)](share-link.js)
 [![CSS3 Variables](https://img.shields.io/badge/CSS-Modern_Variables-38bdf8.svg)](share-link.css)
@@ -11,17 +11,18 @@
 
 ## ⚡ Features
 
-- 📱 **Native OS Share Sheet**: Integrates with `navigator.share` on iOS, Android, and macOS Safari (AirDrop, Messages, Device Sheet).
-- 📋 **1-Click Clipboard Copy**: One-tap URL copying with animated `Copied!` feedback.
-- 🌐 **Social Media Quicklinks**: Instant sharing to WhatsApp, X (Twitter), LinkedIn, Reddit, and Telegram.
-- ✎ **Live Editable Share URL & Title**: Edit link, title, and description via JS API or in-modal edit drawer.
-- ♿ **Accessible**: Full keyboard navigation, `Escape` key close, and responsive mobile bottom sheet layout.
+- 📱 **Native OS share sheet**: uses `navigator.share` on iOS, Android, and macOS Safari
+- 📋 **1-click clipboard copy**: quick URL copying with animated `Copied!` feedback
+- 🌐 **Social media quicklinks**: WhatsApp, X, LinkedIn, Reddit, Telegram
+- ✎ **Live editable share details**: change URL, title, or text dynamically
+- ♿ **Accessible UX**: keyboard support, `Escape` dismissal, and responsive mobile layout
+- 🧩 **Zero external dependencies**: pure HTML, CSS, and JavaScript
 
 ---
 
 ## 🚀 Quickstart
 
-### 1. HTML Script Tag
+### 1. HTML script tag
 
 ```html
 <link rel="stylesheet" href="share-link/share-link.css">
@@ -44,7 +45,6 @@ const share = ShareLink.init({
   position: 'bottom-right'
 });
 
-// Dynamically edit anytime:
 share.setUrl('https://yourwebsite.com/new-page');
 share.setTitle('New Page Title');
 share.setText('Found this great project!');
@@ -66,7 +66,15 @@ share.open();
 
 ---
 
+## 🧩 Example use cases
+
+- launch-page sharing
+- product announcements
+- blog posts and case studies
+- social growth experiments for indie projects
+
+---
+
 ## 📄 License
 
 MIT © [Web Elements Contributors](https://github.com/PurohitBhagyesh/web-elements)
-
