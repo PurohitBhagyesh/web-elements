@@ -177,6 +177,13 @@
       font-size: 12.5px;
       overflow-x: auto;
       color: #38bdf8;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    [data-theme="light"] .code-box {
+      background: #f1f5f9;
+      color: #0369a1;
     }
 
     .code-copy-btn {
@@ -191,10 +198,75 @@
       padding: 4px 8px;
       border-radius: 6px;
       cursor: pointer;
+      z-index: 2;
     }
 
     .code-copy-btn:hover {
       border-color: var(--accent);
+    }
+
+    /* Playground Section */
+    .playground-section {
+      margin-bottom: 48px;
+    }
+
+    .playground-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .playground-header h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .playground-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .form-group input {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--surface-border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 13.5px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    [data-theme="light"] .form-group input {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    .form-group input:focus {
+      border-color: var(--accent);
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 4px;
+      flex-wrap: wrap;
     }
 
     .cta-banner {
@@ -256,39 +328,39 @@
     <header>
       <div class="badge">Open Source Web Components</div>
       <h1>Web Elements</h1>
-      <p class="lead">Two beautiful, zero-dependency floating components extracted from production: UPI Buy Me a Coffee and Native Web Share.</p>
+      <p class="lead">Two beautiful, zero-dependency floating components for modern websites: 1-Click UPI Buy Me a Coffee and Native Web Share.</p>
       <button class="theme-toggle-btn" id="btnToggleTheme" type="button">
         <span>🌓</span> Toggle Light/Dark Theme
       </button>
     </header>
 
     <div class="grid">
-      <!-- 1. Buy Me a Coffee (UPI) -->
+      <!-- 1. Buy Me a Coffee (UPI) Feature Card -->
       <div class="card">
         <div class="card-header">
           <div class="card-icon coffee">☕</div>
           <div class="card-title">
             <h2>Buy Me a Coffee (UPI)</h2>
-            <span>Zero payment gateway fees, instant settlement</span>
+            <span>Zero payment gateway fees, instant bank settlement</span>
           </div>
         </div>
 
         <ul class="feature-list">
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Dynamic QR code generator synced with amount
+            Dynamic QR code generator synced with amount in real time
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Direct 1-click app links: FamApp, PhonePe, Paytm, GPay, Amazon
+            Direct 1-click app links: FamApp, PhonePe, Paytm, GPay, Amazon, WhatsApp
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Registered iOS schemes with seamless fallback
+            Edit Payee Name & UPI ID dynamically via UI or JS API
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            One-click UPI ID copy to clipboard
+            One-click UPI ID copy to clipboard with feedback
           </li>
         </ul>
 
@@ -301,7 +373,7 @@
         </div>
       </div>
 
-      <!-- 2. Share Link -->
+      <!-- 2. Share Link Feature Card -->
       <div class="card">
         <div class="card-header">
           <div class="card-icon share">🚀</div>
@@ -318,7 +390,7 @@
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Instant 1-click URL copy with animated confirmation
+            Edit share URL, title, and text dynamically via UI or JS API
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -326,7 +398,7 @@
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Fully accessible with keyboard Esc and touch friendly
+            Accessible, keyboard responsive with Escape key handling
           </li>
         </ul>
 
@@ -340,8 +412,95 @@
       </div>
     </div>
 
+    <!-- Interactive Configurator / Live Playground -->
+    <section class="playground-section">
+      <div class="playground-header">
+        <div class="badge" style="background: rgba(59, 130, 246, 0.12); border-color: rgba(59, 130, 246, 0.3); color: var(--accent-blue);">Interactive Configurator</div>
+        <h2>Test & Customize Live</h2>
+        <p class="lead" style="font-size: 1rem; margin-bottom: 24px;">Edit the fields below to update the live floating widgets in real-time, or use the ✎ edit button inside each modal!</p>
+      </div>
+
+      <div class="grid">
+        <!-- Coffee Customizer Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon coffee">☕</div>
+            <div class="card-title">
+              <h2>Customize Coffee UPI</h2>
+              <span>Live edit payee name, UPI ID & amount</span>
+            </div>
+          </div>
+
+          <div class="playground-form">
+            <div class="form-group">
+              <label for="cfgPayeeName">Payee Name</label>
+              <input type="text" id="cfgPayeeName" value="Bhagyesh Purohit" placeholder="e.g. Bhagyesh Purohit">
+            </div>
+
+            <div class="form-group">
+              <label for="cfgUpiId">UPI ID (VPA)</label>
+              <input type="text" id="cfgUpiId" value="purohitbhagyesh@fam" placeholder="e.g. username@fam">
+            </div>
+
+            <div class="form-group">
+              <label for="cfgDefaultAmt">Default Amount (₹)</label>
+              <input type="number" id="cfgDefaultAmt" value="50" min="1" max="100000">
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-primary" id="btnOpenCoffee">Open Coffee Modal ↗</button>
+              <button type="button" class="btn btn-secondary" id="btnResetCoffee">Reset</button>
+            </div>
+          </div>
+
+          <div class="code-box">
+            <button class="code-copy-btn" id="btnCopyCoffeeSnippet">Copy</button>
+            <code id="codeCoffeeSnippet"></code>
+          </div>
+        </div>
+
+        <!-- Share Customizer Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon share">🚀</div>
+            <div class="card-title">
+              <h2>Customize Web Share</h2>
+              <span>Live edit URL, title & share text</span>
+            </div>
+          </div>
+
+          <div class="playground-form">
+            <div class="form-group">
+              <label for="cfgShareUrl">Share URL</label>
+              <input type="url" id="cfgShareUrl" value="https://github.com/PurohitBhagyesh/web-elements" placeholder="https://...">
+            </div>
+
+            <div class="form-group">
+              <label for="cfgShareTitle">Share Title</label>
+              <input type="text" id="cfgShareTitle" value="Web Elements - Modern UPI & Web Share Widgets" placeholder="Page Title">
+            </div>
+
+            <div class="form-group">
+              <label for="cfgShareText">Share Description / Text</label>
+              <input type="text" id="cfgShareText" value="Check out these free plug-and-play web elements by Bhagyesh Purohit!" placeholder="Message">
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-primary" style="background: var(--accent-blue); color: #fff;" id="btnOpenShare">Open Share Sheet ↗</button>
+              <button type="button" class="btn btn-secondary" id="btnResetShare">Reset</button>
+            </div>
+          </div>
+
+          <div class="code-box">
+            <button class="code-copy-btn" id="btnCopyShareSnippet">Copy</button>
+            <code id="codeShareSnippet"></code>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="cta-banner">
-      <h3>Test the live widgets!</h3>
+      <h3>Ready to use in your project?</h3>
       <p style="color: var(--text-muted); font-size: 14px;">Look at the bottom corners of your screen: <strong>Buy me a coffee</strong> is on the bottom-left and <strong>Share</strong> is on the bottom-right.</p>
       <div class="cta-buttons">
         <a href="https://github.com/PurohitBhagyesh/web-elements" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
@@ -349,20 +508,27 @@
     </div>
   </div>
 
-  <!-- Initialize Both Live Widgets -->
-  <script src="coffee-upi.js"
-    data-upi="purohitbhagyesh@fam"
-    data-name="Bhagyesh Purohit"
-    data-amount="50"
-    data-position="bottom-left"></script>
-
-  <script src="share-link.js"
-    data-title="Web Elements - Modern UPI Buy Me a Coffee & Share Widgets"
-    data-text="Check out these free plug-and-play web elements by Bhagyesh Purohit!"
-    data-url="https://github.com/PurohitBhagyesh/web-elements"
-    data-position="bottom-right"></script>
+  <!-- Load Scripts -->
+  <script src="coffee-upi.js"></script>
+  <script src="share-link.js"></script>
 
   <script>
+    // Initialize Both Live Widgets Programmatically
+    const coffeeWidget = CoffeeUPI.init({
+      upiId: 'purohitbhagyesh@fam',
+      payeeName: 'Bhagyesh Purohit',
+      defaultAmount: 50,
+      presets: [20, 50, 100, 200],
+      position: 'bottom-left'
+    });
+
+    const shareWidget = ShareLink.init({
+      title: 'Web Elements - Modern UPI & Web Share Widgets',
+      text: 'Check out these free plug-and-play web elements by Bhagyesh Purohit!',
+      url: 'https://github.com/PurohitBhagyesh/web-elements',
+      position: 'bottom-right'
+    });
+
     // Theme toggle
     const themeBtn = document.getElementById('btnToggleTheme');
     themeBtn.addEventListener('click', () => {
@@ -370,6 +536,98 @@
       const next = current === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', next);
     });
+
+    // Interactive Coffee Playground Sync
+    const inputPayeeName = document.getElementById('cfgPayeeName');
+    const inputUpiId = document.getElementById('cfgUpiId');
+    const inputDefaultAmt = document.getElementById('cfgDefaultAmt');
+    const codeCoffeeSnippet = document.getElementById('codeCoffeeSnippet');
+    const btnOpenCoffee = document.getElementById('btnOpenCoffee');
+    const btnResetCoffee = document.getElementById('btnResetCoffee');
+    const btnCopyCoffeeSnippet = document.getElementById('btnCopyCoffeeSnippet');
+
+    function updateCoffeeConfig() {
+      const name = inputPayeeName.value.trim() || 'Bhagyesh Purohit';
+      const upi = inputUpiId.value.trim() || 'purohitbhagyesh@fam';
+      const amt = parseInt(inputDefaultAmt.value, 10) || 50;
+
+      coffeeWidget.updateConfig({
+        payeeName: name,
+        upiId: upi,
+        amount: amt
+      });
+
+      codeCoffeeSnippet.textContent = `<link rel="stylesheet" href="coffee-upi.css">\n<script src="coffee-upi.js"\n  data-upi="${upi}"\n  data-name="${name}"\n  data-amount="${amt}"><\/script>`;
+    }
+
+    inputPayeeName.addEventListener('input', updateCoffeeConfig);
+    inputUpiId.addEventListener('input', updateCoffeeConfig);
+    inputDefaultAmt.addEventListener('input', updateCoffeeConfig);
+
+    btnOpenCoffee.addEventListener('click', () => {
+      coffeeWidget.open();
+    });
+
+    btnResetCoffee.addEventListener('click', () => {
+      inputPayeeName.value = 'Bhagyesh Purohit';
+      inputUpiId.value = 'purohitbhagyesh@fam';
+      inputDefaultAmt.value = 50;
+      updateCoffeeConfig();
+    });
+
+    btnCopyCoffeeSnippet.addEventListener('click', () => {
+      navigator.clipboard.writeText(codeCoffeeSnippet.textContent);
+      btnCopyCoffeeSnippet.textContent = 'Copied!';
+      setTimeout(() => btnCopyCoffeeSnippet.textContent = 'Copy', 2000);
+    });
+
+    // Interactive Share Playground Sync
+    const inputShareUrl = document.getElementById('cfgShareUrl');
+    const inputShareTitle = document.getElementById('cfgShareTitle');
+    const inputShareText = document.getElementById('cfgShareText');
+    const codeShareSnippet = document.getElementById('codeShareSnippet');
+    const btnOpenShare = document.getElementById('btnOpenShare');
+    const btnResetShare = document.getElementById('btnResetShare');
+    const btnCopyShareSnippet = document.getElementById('btnCopyShareSnippet');
+
+    function updateShareConfig() {
+      const url = inputShareUrl.value.trim() || 'https://github.com/PurohitBhagyesh/web-elements';
+      const title = inputShareTitle.value.trim() || 'Web Elements';
+      const text = inputShareText.value.trim() || 'Check this out!';
+
+      shareWidget.updateConfig({
+        url: url,
+        title: title,
+        text: text
+      });
+
+      codeShareSnippet.textContent = `<link rel="stylesheet" href="share-link.css">\n<script src="share-link.js"\n  data-url="${url}"\n  data-title="${title}"\n  data-text="${text}"><\/script>`;
+    }
+
+    inputShareUrl.addEventListener('input', updateShareConfig);
+    inputShareTitle.addEventListener('input', updateShareConfig);
+    inputShareText.addEventListener('input', updateShareConfig);
+
+    btnOpenShare.addEventListener('click', () => {
+      shareWidget.open();
+    });
+
+    btnResetShare.addEventListener('click', () => {
+      inputShareUrl.value = 'https://github.com/PurohitBhagyesh/web-elements';
+      inputShareTitle.value = 'Web Elements - Modern UPI & Web Share Widgets';
+      inputShareText.value = 'Check out these free plug-and-play web elements by Bhagyesh Purohit!';
+      updateShareConfig();
+    });
+
+    btnCopyShareSnippet.addEventListener('click', () => {
+      navigator.clipboard.writeText(codeShareSnippet.textContent);
+      btnCopyShareSnippet.textContent = 'Copied!';
+      setTimeout(() => btnCopyShareSnippet.textContent = 'Copy', 2000);
+    });
+
+    // Initial render of code snippets
+    updateCoffeeConfig();
+    updateShareConfig();
   </script>
 </body>
 </html>

@@ -140,6 +140,12 @@
   margin: 0;
 }
 
+.cupi-id-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .cupi-copy-id {
   display: inline-flex;
   align-items: center;
@@ -163,6 +169,106 @@
 .cupi-copy-id code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 11px;
+}
+
+.cupi-edit-btn {
+  background-color: var(--cupi-surface-hover);
+  border: 1px solid var(--cupi-border);
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 11px;
+  color: var(--cupi-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.cupi-edit-btn:hover {
+  border-color: var(--cupi-accent);
+  color: var(--cupi-accent);
+}
+
+/* Inline Edit Drawer */
+.cupi-edit-drawer {
+  background: var(--cupi-bg);
+  border: 1px solid var(--cupi-border);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: cupiPop 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cupi-edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cupi-edit-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cupi-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cupi-edit-field input {
+  background: var(--cupi-surface);
+  border: 1px solid var(--cupi-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: var(--cupi-text);
+  font-family: inherit;
+  font-size: 12.5px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.cupi-edit-field input:focus {
+  border-color: var(--cupi-accent);
+}
+
+.cupi-edit-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.cupi-edit-save-btn {
+  background: var(--cupi-accent);
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.cupi-edit-save-btn:hover {
+  opacity: 0.9;
+}
+
+.cupi-edit-cancel-btn {
+  background: transparent;
+  color: var(--cupi-text-muted);
+  border: 1px solid var(--cupi-border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cupi-edit-cancel-btn:hover {
+  color: var(--cupi-text);
+  border-color: var(--cupi-text-dim);
 }
 
 .cupi-close-btn {
@@ -430,3 +536,4 @@
     overflow-y: auto;
   }
 }
+

@@ -145,6 +145,112 @@
   margin: 0;
 }
 
+.wshare-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wshare-edit-btn {
+  background-color: var(--wshare-surface-hover);
+  border: 1px solid var(--wshare-border);
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 11px;
+  color: var(--wshare-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.wshare-edit-btn:hover {
+  border-color: var(--wshare-accent);
+  color: var(--wshare-accent);
+}
+
+/* Inline Edit Drawer */
+.wshare-edit-drawer {
+  background: var(--wshare-bg);
+  border: 1px solid var(--wshare-border);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: wsharePop 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.wshare-edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wshare-edit-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--wshare-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.wshare-edit-field input {
+  background: var(--wshare-surface);
+  border: 1px solid var(--wshare-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: var(--wshare-text);
+  font-family: inherit;
+  font-size: 12.5px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.wshare-edit-field input:focus {
+  border-color: var(--wshare-accent);
+}
+
+.wshare-edit-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.wshare-edit-save-btn {
+  background: var(--wshare-accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.wshare-edit-save-btn:hover {
+  opacity: 0.9;
+}
+
+.wshare-edit-cancel-btn {
+  background: transparent;
+  color: var(--wshare-text-muted);
+  border: 1px solid var(--wshare-border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.wshare-edit-cancel-btn:hover {
+  color: var(--wshare-text);
+  border-color: var(--wshare-text-dim);
+}
+
 .wshare-close-btn {
   background: none;
   border: none;
@@ -300,3 +406,4 @@
     margin: 0 auto;
   }
 }
+

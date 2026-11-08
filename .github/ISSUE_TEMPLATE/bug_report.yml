@@ -1,0 +1,34 @@
+name: 🐛 Bug Report
+description: File a bug report to help us improve Web Elements
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report an issue!
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Include coffee-upi.js on page
+        2. Click on payment app button
+        3. See error
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser name & version, OS (iOS, Android, macOS, Windows)
+      placeholder: "e.g. Chrome 122 on macOS Sonoma / Safari on iOS 17"
+    validations:
+      required: true

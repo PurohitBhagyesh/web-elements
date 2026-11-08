@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate JavaScript Syntax
+        run: |
+          node -c coffee-upi.js
+          node -c share-link.js
+
+      - name: Check HTML and CSS Files Exist
+        run: |
+          test -f index.html
+          test -f coffee-upi.css
+          test -f share-link.css
+          test -f LICENSE
+          test -f README.md
