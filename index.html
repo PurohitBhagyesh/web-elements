@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Elements - Modern UPI Buy Me a Coffee & Web Share Widgets</title>
+  <meta name="description" content="Lightweight, plug-and-play floating widgets for modern websites: 1-click UPI Buy Me a Coffee and Native Web Share.">
+  <link rel="stylesheet" href="coffee-upi.css">
+  <link rel="stylesheet" href="share-link.css">
+  <style>
+    :root {
+      --bg: #090a0f;
+      --surface: #12141c;
+      --surface-border: rgba(255, 255, 255, 0.08);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #22c55e;
+      --accent-blue: #3b82f6;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-border: rgba(0, 0, 0, 0.08);
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --accent: #16a34a;
+      --accent-blue: #2563eb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px 140px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    p.lead {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .theme-toggle-btn {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--text-muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .card-icon.coffee { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+    .card-icon.share { background: rgba(59, 130, 246, 0.15); color: var(--accent-blue); }
+
+    .card-title h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .card-title span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-list li svg {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .code-box {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--surface-border);
+      border-radius: 10px;
+      padding: 14px;
+      position: relative;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12.5px;
+      overflow-x: auto;
+      color: #38bdf8;
+    }
+
+    .code-copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .code-copy-btn:hover {
+      border-color: var(--accent);
+    }
+
+    .cta-banner {
+      text-align: center;
+      padding: 32px;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: #16a34a;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--surface-border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Open Source Web Components</div>
+      <h1>Web Elements</h1>
+      <p class="lead">Two beautiful, zero-dependency floating components extracted from production: UPI Buy Me a Coffee and Native Web Share.</p>
+      <button class="theme-toggle-btn" id="btnToggleTheme" type="button">
+        <span>🌓</span> Toggle Light/Dark Theme
+      </button>
+    </header>
+
+    <div class="grid">
+      <!-- 1. Buy Me a Coffee (UPI) -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon coffee">☕</div>
+          <div class="card-title">
+            <h2>Buy Me a Coffee (UPI)</h2>
+            <span>Zero payment gateway fees, instant settlement</span>
+          </div>
+        </div>
+
+        <ul class="feature-list">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Dynamic QR code generator synced with amount
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Direct 1-click app links: FamApp, PhonePe, Paytm, GPay, Amazon
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Registered iOS schemes with seamless fallback
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            One-click UPI ID copy to clipboard
+          </li>
+        </ul>
+
+        <div class="code-box">
+          <button class="code-copy-btn" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'">Copy</button>
+          <code>&lt;link rel="stylesheet" href="coffee-upi.css"&gt;
+&lt;script src="coffee-upi.js"
+  data-upi="purohitbhagyesh@fam"
+  data-name="Bhagyesh Purohit"&gt;&lt;/script&gt;</code>
+        </div>
+      </div>
+
+      <!-- 2. Share Link -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon share">🚀</div>
+          <div class="card-title">
+            <h2>Native Web Share</h2>
+            <span>Native device sheet & social quicklinks</span>
+          </div>
+        </div>
+
+        <ul class="feature-list">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Native OS sheet on iOS, Android & macOS (AirDrop, Messages)
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Instant 1-click URL copy with animated confirmation
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            One-click social sharing: WhatsApp, X, LinkedIn, Reddit, Telegram
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Fully accessible with keyboard Esc and touch friendly
+          </li>
+        </ul>
+
+        <div class="code-box">
+          <button class="code-copy-btn" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.innerText='Copied!'">Copy</button>
+          <code>&lt;link rel="stylesheet" href="share-link.css"&gt;
+&lt;script src="share-link.js"
+  data-title="My Project"
+  data-url="https://example.com"&gt;&lt;/script&gt;</code>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Test the live widgets!</h3>
+      <p style="color: var(--text-muted); font-size: 14px;">Look at the bottom corners of your screen: <strong>Buy me a coffee</strong> is on the bottom-left and <strong>Share</strong> is on the bottom-right.</p>
+      <div class="cta-buttons">
+        <a href="https://github.com/PurohitBhagyesh/web-elements" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Initialize Both Live Widgets -->
+  <script src="coffee-upi.js"
+    data-upi="purohitbhagyesh@fam"
+    data-name="Bhagyesh Purohit"
+    data-amount="50"
+    data-position="bottom-left"></script>
+
+  <script src="share-link.js"
+    data-title="Web Elements - Modern UPI Buy Me a Coffee & Share Widgets"
+    data-text="Check out these free plug-and-play web elements by Bhagyesh Purohit!"
+    data-url="https://github.com/PurohitBhagyesh/web-elements"
+    data-position="bottom-right"></script>
+
+  <script>
+    // Theme toggle
+    const themeBtn = document.getElementById('btnToggleTheme');
+    themeBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+    });
+  </script>
+</body>
+</html>
