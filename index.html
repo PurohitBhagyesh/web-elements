@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a0f">
   <title>Web Elements for Indie Developers - UPI Buy Me a Coffee & Native Web Share</title>
   <meta name="description" content="Lightweight, zero-dependency floating widgets for indie developers: 1-click UPI Buy Me a Coffee (0% fees) and Native Web Share.">
-  
-  <!-- Open Graph & Social Preview -->
+
   <meta property="og:title" content="Web Elements for Indie Developers">
   <meta property="og:description" content="1-click UPI Buy Me a Coffee (0% platform fees) and Native Web Share widgets. Zero dependencies.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/PurohitBhagyesh/web-elements/main/insta-post.png">
   <meta property="og:url" content="https://github.com/PurohitBhagyesh/web-elements">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Web Elements for Indie Developers">
   <meta name="twitter:description" content="1-click UPI Buy Me a Coffee (0% fees) & Native Web Share widgets. Pure Vanilla JS.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/PurohitBhagyesh/web-elements/main/insta-post.png">
 
   <link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css">
   <link rel="stylesheet" href="share-link/share-link.css">
@@ -112,7 +110,6 @@
       border-color: var(--text-muted);
     }
 
-    /* Terminal Quick Install Banner */
     .terminal-banner {
       background: #0d1117;
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -293,7 +290,6 @@
       border-color: var(--accent);
     }
 
-    /* Playground Section */
     .playground-section {
       margin-bottom: 48px;
     }
@@ -422,7 +418,6 @@
       </button>
     </header>
 
-    <!-- 1-Line Bash Install Banner -->
     <div class="terminal-banner">
       <div class="terminal-bar">
         <div class="terminal-dots">
@@ -434,12 +429,11 @@
       </div>
       <div class="terminal-body">
         <code>curl -sSL https://raw.githubusercontent.com/PurohitBhagyesh/web-elements/main/install.sh | bash</code>
-        <button class="terminal-copy-btn" onclick="navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/PurohitBhagyesh/web-elements/main/install.sh | bash'); this.innerText='Copied!'">Copy Command</button>
+        <button class="terminal-copy-btn" onclick="navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/PurohitBhagyesh/web-elements/main/install.sh | bash'); this.innerText='Copied!' ; setTimeout(() => this.innerText='Copy', 1500);">Copy</button>
       </div>
     </div>
 
     <div class="grid">
-      <!-- 1. Buy Me a Coffee (UPI) Feature Card -->
       <div class="card">
         <div class="card-header">
           <div class="card-icon coffee">☕</div>
@@ -477,7 +471,6 @@
         </div>
       </div>
 
-      <!-- 2. Share Link Feature Card -->
       <div class="card">
         <div class="card-header">
           <div class="card-icon share">🚀</div>
@@ -516,7 +509,6 @@
       </div>
     </div>
 
-    <!-- Interactive Configurator / Live Playground -->
     <section class="playground-section">
       <div class="playground-header">
         <div class="badge" style="background: rgba(59, 130, 246, 0.12); border-color: rgba(59, 130, 246, 0.3); color: var(--accent-blue);">Interactive Configurator</div>
@@ -525,7 +517,6 @@
       </div>
 
       <div class="grid">
-        <!-- Coffee Customizer Card -->
         <div class="card">
           <div class="card-header">
             <div class="card-icon coffee">☕</div>
@@ -563,7 +554,6 @@
           </div>
         </div>
 
-        <!-- Share Customizer Card -->
         <div class="card">
           <div class="card-header">
             <div class="card-icon share">🚀</div>
@@ -612,12 +602,10 @@
     </div>
   </div>
 
-  <!-- Load Structured Scripts -->
   <script src="buy-me-a-coffee/coffee-upi.js"></script>
   <script src="share-link/share-link.js"></script>
 
   <script>
-    // Initialize Both Live Widgets Programmatically
     const coffeeWidget = CoffeeUPI.init({
       upiId: 'developer@upi',
       payeeName: 'Developer Name',
@@ -633,7 +621,6 @@
       position: 'bottom-right'
     });
 
-    // Theme toggle
     const themeBtn = document.getElementById('btnToggleTheme');
     themeBtn.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme');
@@ -641,7 +628,6 @@
       document.documentElement.setAttribute('data-theme', next);
     });
 
-    // Interactive Coffee Playground Sync
     const inputPayeeName = document.getElementById('cfgPayeeName');
     const inputUpiId = document.getElementById('cfgUpiId');
     const inputDefaultAmt = document.getElementById('cfgDefaultAmt');
@@ -661,16 +647,14 @@
         amount: amt
       });
 
-      codeCoffeeSnippet.textContent = `<link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css">\n<script src="buy-me-a-coffee/coffee-upi.js"\n  data-upi="${upi}"\n  data-name="${name}"\n  data-amount="${amt}"><\/script>`;
+      codeCoffeeSnippet.textContent = `<link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css">\n<script src="buy-me-a-coffee/coffee-upi.js"\n  data-upi="${upi}"\n  data-name="${name}"\n  data-amount="${amt}"\n  data-position="bottom-left">\n</script>`;
     }
 
     inputPayeeName.addEventListener('input', updateCoffeeConfig);
     inputUpiId.addEventListener('input', updateCoffeeConfig);
     inputDefaultAmt.addEventListener('input', updateCoffeeConfig);
 
-    btnOpenCoffee.addEventListener('click', () => {
-      coffeeWidget.open();
-    });
+    btnOpenCoffee.addEventListener('click', () => coffeeWidget.open());
 
     btnResetCoffee.addEventListener('click', () => {
       inputPayeeName.value = 'Developer Name';
@@ -685,7 +669,6 @@
       setTimeout(() => btnCopyCoffeeSnippet.textContent = 'Copy', 2000);
     });
 
-    // Interactive Share Playground Sync
     const inputShareUrl = document.getElementById('cfgShareUrl');
     const inputShareTitle = document.getElementById('cfgShareTitle');
     const inputShareText = document.getElementById('cfgShareText');
@@ -700,21 +683,19 @@
       const text = inputShareText.value.trim() || 'Check this out!';
 
       shareWidget.updateConfig({
-        url: url,
-        title: title,
-        text: text
+        url,
+        title,
+        text
       });
 
-      codeShareSnippet.textContent = `<link rel="stylesheet" href="share-link/share-link.css">\n<script src="share-link/share-link.js"\n  data-url="${url}"\n  data-title="${title}"\n  data-text="${text}"><\/script>`;
+      codeShareSnippet.textContent = `<link rel="stylesheet" href="share-link/share-link.css">\n<script src="share-link/share-link.js"\n  data-url="${url}"\n  data-title="${title}"\n  data-text="${text}"\n  data-position="bottom-right">\n</script>`;
     }
 
     inputShareUrl.addEventListener('input', updateShareConfig);
     inputShareTitle.addEventListener('input', updateShareConfig);
     inputShareText.addEventListener('input', updateShareConfig);
 
-    btnOpenShare.addEventListener('click', () => {
-      shareWidget.open();
-    });
+    btnOpenShare.addEventListener('click', () => shareWidget.open());
 
     btnResetShare.addEventListener('click', () => {
       inputShareUrl.value = 'https://github.com/PurohitBhagyesh/web-elements';
@@ -729,7 +710,6 @@
       setTimeout(() => btnCopyShareSnippet.textContent = 'Copy', 2000);
     });
 
-    // Initial render of code snippets
     updateCoffeeConfig();
     updateShareConfig();
   </script>
