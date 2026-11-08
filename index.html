@@ -1,70 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090a0f">
-  <meta name="description" content="Zero-dependency floating widgets for indie developers and creators: direct UPI donations and native Web Share.">
-  <title>Web Elements — UPI Donations & Web Share Widgets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Zero-dependency floating widgets for direct UPI donations and native Web Share dialogs, built for indie developers and creators.">
+  <title>Web Elements — Lightweight widgets for your website</title>
   <link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css">
   <link rel="stylesheet" href="share-link/share-link.css">
   <style>
-    :root{--bg:#090a0f;--surface:#12141c;--border:rgba(255,255,255,.09);--text:#f8fafc;--muted:#94a3b8;--green:#22c55e;--blue:#3b82f6;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-    [data-theme="light"]{--bg:#f8fafc;--surface:#fff;--border:rgba(0,0,0,.1);--text:#0f172a;--muted:#64748b;--green:#16a34a;--blue:#2563eb}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:var(--font);padding:48px 20px 120px;transition:background .2s,color .2s}.container{width:min(900px,100%);margin:auto}header,.section-heading{text-align:center}header{margin-bottom:36px}.badge{display:inline-block;padding:5px 12px;border:1px solid rgba(34,197,94,.3);border-radius:999px;color:var(--green);font-size:12px;font-weight:700}h1{font-size:clamp(2rem,5vw,3rem);margin:14px 0 10px}.lead{max-width:680px;margin:0 auto 20px;color:var(--muted);font-size:1.05rem;line-height:1.6}.button{border:1px solid var(--border);border-radius:8px;padding:9px 14px;background:var(--surface);color:var(--text);font:inherit;font-weight:600;cursor:pointer}.button:hover{border-color:var(--green)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:20px;margin:28px 0 44px}.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px}.card h2{margin:0;font-size:1.2rem}.muted{color:var(--muted);font-size:.9rem}.fields{display:grid;gap:12px}.field{display:grid;gap:6px}.field label{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}.field input{width:100%;border:1px solid var(--border);border-radius:8px;padding:10px 12px;background:var(--bg);color:var(--text);font:inherit}.field input:focus{outline:2px solid var(--blue);outline-offset:1px}.actions{display:flex;gap:10px;flex-wrap:wrap}.primary{background:var(--green);border-color:var(--green);color:#07110a}.share-primary{background:var(--blue);border-color:var(--blue);color:#fff}.code-wrap{position:relative;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:42px 12px 12px;min-height:92px}.code-wrap pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;color:#38bdf8;font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}.copy-code{position:absolute;right:8px;top:8px}.cta{text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:26px}.cta h2{margin:0 0 10px}.cta p{color:var(--muted);line-height:1.5}@media(max-width:520px){body{padding:32px 14px 110px}.card{padding:18px}}
+    :root {
+      color-scheme: dark;
+      --page: #0b1020;
+      --surface: #111827;
+      --surface-raised: #172033;
+      --border: rgba(148, 163, 184, .18);
+      --text: #f1f5f9;
+      --muted: #9aa8bd;
+      --green: #34d399;
+      --blue: #60a5fa;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .28);
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    [data-theme="light"] {
+      color-scheme: light;
+      --page: #f4f7fb;
+      --surface: #fff;
+      --surface-raised: #f8fafc;
+      --border: rgba(30, 41, 59, .14);
+      --text: #152033;
+      --muted: #5d6b80;
+      --green: #087f5b;
+      --blue: #2563eb;
+      --shadow: 0 20px 55px rgba(30, 41, 59, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+      padding: 32px 20px 120px;
+      background: radial-gradient(ellipse at 50% -20%, rgba(59, 130, 246, .14), transparent 55%), var(--page);
+      color: var(--text);
+      font-family: var(--font);
+      transition: background-color .2s ease, color .2s ease;
+    }
+    button, input { font: inherit; }
+    .container { width: min(100%, 980px); margin: 0 auto; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 64px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-weight: 750; letter-spacing: -.025em; text-decoration: none; }
+    .brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--blue); font-size: 15px; }
+    .theme-button, .button { min-height: 40px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); color: var(--text); font-weight: 650; cursor: pointer; transition: border-color .16s ease, transform .16s ease, background .16s ease; }
+    .theme-button:hover, .button:hover { border-color: var(--blue); transform: translateY(-1px); }
+    .hero { max-width: 730px; margin: 0 auto 54px; text-align: center; }
+    .eyebrow { color: var(--blue); font-size: .76rem; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { margin: 14px 0; font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.03; letter-spacing: -.065em; }
+    .hero-copy { max-width: 640px; margin: 0 auto; color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem); line-height: 1.7; }
+    .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .button-primary { border-color: var(--blue); background: var(--blue); color: #07111f; text-decoration: none; }
+    .button-primary:hover { background: #93c5fd; }
+    .section-heading { margin: 0 0 18px; font-size: 1.35rem; letter-spacing: -.03em; }
+    .widgets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { min-width: 0; padding: 24px; border: 1px solid var(--border); border-radius: 18px; background: linear-gradient(160deg, var(--surface-raised), var(--surface) 54%); box-shadow: var(--shadow); }
+    .card-heading { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 22px; }
+    .card-icon { display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--green); font-size: .83rem; font-weight: 800; }
+    .card-share .card-icon { color: var(--blue); }
+    h3 { margin: 1px 0 6px; font-size: 1.08rem; letter-spacing: -.025em; }
+    .card-description, .hint { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.55; }
+    .fields { display: grid; gap: 14px; }
+    .field { display: grid; gap: 7px; }
+    .field label { color: var(--muted); font-size: .77rem; font-weight: 700; }
+    .field input { width: 100%; min-height: 42px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 9px; outline: none; background: var(--page); color: var(--text); }
+    .field input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(96, 165, 250, .15); }
+    .actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .actions .button-primary { background: var(--green); border-color: var(--green); color: #062116; }
+    .card-share .actions .button-primary { background: var(--blue); border-color: var(--blue); color: #07111f; }
+    .snippet { position: relative; margin-top: 18px; padding: 48px 14px 14px; border: 1px solid var(--border); border-radius: 11px; background: var(--page); }
+    .snippet pre { min-height: 76px; margin: 0; overflow-x: auto; color: var(--muted); font: .76rem/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .snippet .copy-button { position: absolute; top: 9px; right: 9px; min-height: 30px; padding: 5px 10px; font-size: .76rem; }
+    .try-section { margin: 44px 0 0; padding: 26px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); text-align: center; }
+    .try-section h2 { margin: 0 0 8px; font-size: 1.18rem; }
+    .try-section p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.6; }
+    .footer { margin-top: 28px; color: var(--muted); font-size: .8rem; text-align: center; }
+    .footer a { color: var(--muted); text-underline-offset: 3px; }
+    @media (max-width: 720px) { .topbar { margin-bottom: 46px; } .widgets { grid-template-columns: 1fr; } }
+    @media (max-width: 480px) { body { padding: 20px 14px 105px; } .topbar { margin-bottom: 40px; } .card { padding: 19px; } .try-section { padding: 22px 18px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
   </style>
 </head>
 <body>
   <main class="container">
-    <header>
-      <span class="badge">For indie developers & creators</span>
-      <h1>Web Elements</h1>
-      <p class="lead">Zero-dependency floating widgets for direct UPI donations and native Web Share dialogs with social quicklinks.</p>
-      <button class="button" id="themeToggle" type="button">Toggle light / dark theme</button>
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Web Elements home"><span class="brand-mark" aria-hidden="true">WE</span><span>Web Elements</span></a>
+      <button class="theme-button" id="themeToggle" type="button" aria-pressed="false">Switch to light mode</button>
+    </nav>
+
+    <header class="hero" id="top">
+      <span class="eyebrow">Lightweight widgets for the open web</span>
+      <h1>Small tools.<br>More meaningful interactions.</h1>
+      <p class="hero-copy">Add direct UPI support and native sharing to your website with two floating widgets. No framework or third-party runtime dependencies required.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#configurator">Try the configurator</a>
+        <a class="button" href="https://github.com/PurohitBhagyesh/web-elements" target="_blank" rel="noopener noreferrer">View source on GitHub</a>
+      </div>
     </header>
 
-    <section class="grid" aria-label="Widget configurators">
-      <article class="card">
-        <div><h2>☕ Buy Me a Coffee (UPI)</h2><p class="muted">Set the payee details and default amount for the demo widget.</p></div>
-        <div class="fields">
-          <div class="field"><label for="payeeName">Payee name</label><input id="payeeName" value="Developer Name"></div>
-          <div class="field"><label for="upiId">UPI ID</label><input id="upiId" value="developer@upi"></div>
-          <div class="field"><label for="amount">Default amount (₹)</label><input id="amount" type="number" min="1" max="100000" value="50"></div>
-        </div>
-        <div class="actions"><button class="button primary" id="openCoffee" type="button">Open coffee widget</button><button class="button" id="resetCoffee" type="button">Reset</button></div>
-        <div class="code-wrap"><button class="button copy-code" id="copyCoffee" type="button">Copy</button><pre id="coffeeSnippet"></pre></div>
-      </article>
+    <section id="configurator" aria-labelledby="configurator-title">
+      <h2 class="section-heading" id="configurator-title">Configure the demo widgets</h2>
+      <div class="widgets">
+        <article class="card">
+          <div class="card-heading">
+            <span class="card-icon" aria-hidden="true">UPI</span>
+            <div><h3>Direct UPI support</h3><p class="card-description">Configure the payee details and default amount.</p></div>
+          </div>
+          <div class="fields">
+            <div class="field"><label for="payeeName">Payee name</label><input id="payeeName" type="text" value="Developer Name" autocomplete="name"></div>
+            <div class="field"><label for="upiId">UPI ID</label><input id="upiId" type="text" value="developer@upi" autocomplete="off"></div>
+            <div class="field"><label for="amount">Default amount (INR)</label><input id="amount" type="number" min="1" max="100000" step="1" value="50" inputmode="numeric"></div>
+          </div>
+          <div class="actions">
+            <button class="button button-primary" id="openCoffee" type="button">Open donation widget</button>
+            <button class="button" id="resetCoffee" type="button">Reset</button>
+          </div>
+          <div class="snippet"><button class="button copy-button" id="copyCoffee" type="button">Copy code</button><pre id="coffeeSnippet" aria-label="UPI widget embed code"></pre></div>
+        </article>
 
-      <article class="card">
-        <div><h2>🚀 Native Web Share</h2><p class="muted">Customize the URL and message used by the share widget.</p></div>
-        <div class="fields">
-          <div class="field"><label for="shareUrl">Share URL</label><input id="shareUrl" type="url" value="https://github.com/PurohitBhagyesh/web-elements"></div>
-          <div class="field"><label for="shareTitle">Share title</label><input id="shareTitle" value="Web Elements"></div>
-          <div class="field"><label for="shareText">Share text</label><input id="shareText" value="Zero-dependency widgets for indie developers and creators."></div>
-        </div>
-        <div class="actions"><button class="button share-primary" id="openShare" type="button">Open share widget</button><button class="button" id="resetShare" type="button">Reset</button></div>
-        <div class="code-wrap"><button class="button copy-code" id="copyShare" type="button">Copy</button><pre id="shareSnippet"></pre></div>
-      </article>
+        <article class="card card-share">
+          <div class="card-heading">
+            <span class="card-icon" aria-hidden="true">SHARE</span>
+            <div><h3>Native Web Share</h3><p class="card-description">Set the URL and message visitors can share.</p></div>
+          </div>
+          <div class="fields">
+            <div class="field"><label for="shareUrl">Share URL</label><input id="shareUrl" type="url" value="https://github.com/PurohitBhagyesh/web-elements" autocomplete="url"></div>
+            <div class="field"><label for="shareTitle">Share title</label><input id="shareTitle" type="text" value="Web Elements" autocomplete="off"></div>
+            <div class="field"><label for="shareText">Share message</label><input id="shareText" type="text" value="Zero-dependency widgets for indie developers and creators." autocomplete="off"></div>
+          </div>
+          <div class="actions">
+            <button class="button button-primary" id="openShare" type="button">Open share widget</button>
+            <button class="button" id="resetShare" type="button">Reset</button>
+          </div>
+          <div class="snippet"><button class="button copy-button" id="copyShare" type="button">Copy code</button><pre id="shareSnippet" aria-label="Share widget embed code"></pre></div>
+        </article>
+      </div>
     </section>
 
-    <section class="cta">
-      <h2>Try the floating widgets</h2>
-      <p>The coffee widget is at the bottom-left; the share widget is at the bottom-right. Open either widget to test its controls.</p>
-      <a class="button" href="https://github.com/PurohitBhagyesh/web-elements" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+    <section class="try-section" aria-labelledby="try-title">
+      <h2 id="try-title">Preview the floating widgets</h2>
+      <p>The donation widget appears in the lower-left corner and the share widget in the lower-right. Use the controls above to update them.</p>
     </section>
+    <footer class="footer">Open source under the MIT License · <a href="https://github.com/PurohitBhagyesh/web-elements" target="_blank" rel="noopener noreferrer">GitHub repository</a></footer>
   </main>
 
   <script src="buy-me-a-coffee/coffee-upi.js"></script>
   <script src="share-link/share-link.js"></script>
   <script>
     (() => {
+      'use strict';
       const coffeeDefaults = { name: 'Developer Name', upi: 'developer@upi', amount: 50 };
       const shareDefaults = {
         url: 'https://github.com/PurohitBhagyesh/web-elements',
         title: 'Web Elements',
         text: 'Zero-dependency widgets for indie developers and creators.'
       };
-      const byId = (id) => document.getElementById(id);
+      const get = (id) => document.getElementById(id);
       const coffee = CoffeeUPI.init({
         upiId: coffeeDefaults.upi,
         payeeName: coffeeDefaults.name,
@@ -73,76 +171,94 @@
         position: 'bottom-left'
       });
       const share = ShareLink.init({ ...shareDefaults, position: 'bottom-right' });
+      const scriptEnd = '<' + '/script>';
 
-      const closingScript = '<' + '/script>';
+      const escapeAttribute = (value) => String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
       const updateCoffee = () => {
-        const name = byId('payeeName').value.trim() || coffeeDefaults.name;
-        const upi = byId('upiId').value.trim() || coffeeDefaults.upi;
-        const amount = Math.max(1, parseInt(byId('amount').value, 10) || coffeeDefaults.amount);
+        const name = get('payeeName').value.trim() || coffeeDefaults.name;
+        const upi = get('upiId').value.trim() || coffeeDefaults.upi;
+        const amount = Math.min(100000, Math.max(1, Number.parseInt(get('amount').value, 10) || coffeeDefaults.amount));
         coffee.updateConfig({ payeeName: name, upiId: upi, amount });
-        byId('coffeeSnippet').textContent = [
+        get('coffeeSnippet').textContent = [
           '<link rel="stylesheet" href="buy-me-a-coffee/coffee-upi.css">',
           '<script src="buy-me-a-coffee/coffee-upi.js"',
-          '  data-upi="' + upi + '"',
-          '  data-name="' + name + '"',
+          '  data-upi="' + escapeAttribute(upi) + '"',
+          '  data-name="' + escapeAttribute(name) + '"',
           '  data-amount="' + amount + '">',
-          closingScript
+          scriptEnd
         ].join('\n');
-      };
-      const updateShare = () => {
-        const url = byId('shareUrl').value.trim() || shareDefaults.url;
-        const title = byId('shareTitle').value.trim() || shareDefaults.title;
-        const text = byId('shareText').value.trim() || shareDefaults.text;
-        share.updateConfig({ url, title, text });
-        byId('shareSnippet').textContent = [
-          '<link rel="stylesheet" href="share-link/share-link.css">',
-          '<script src="share-link/share-link.js"',
-          '  data-url="' + url + '"',
-          '  data-title="' + title + '"',
-          '  data-text="' + text + '">',
-          closingScript
-        ].join('\n');
-      };
-      const copyText = async (text, button) => {
-        try {
-          await navigator.clipboard.writeText(text);
-          button.textContent = 'Copied!';
-        } catch (error) {
-          const textarea = document.createElement('textarea');
-          textarea.value = text;
-          textarea.style.position = 'fixed';
-          textarea.style.opacity = '0';
-          document.body.appendChild(textarea);
-          textarea.select();
-          const copied = document.execCommand('copy');
-          textarea.remove();
-          button.textContent = copied ? 'Copied!' : 'Copy failed';
-        }
-        window.setTimeout(() => { button.textContent = 'Copy'; }, 1800);
       };
 
-      ['payeeName', 'upiId', 'amount'].forEach((id) => byId(id).addEventListener('input', updateCoffee));
-      ['shareUrl', 'shareTitle', 'shareText'].forEach((id) => byId(id).addEventListener('input', updateShare));
-      byId('openCoffee').addEventListener('click', () => coffee.open());
-      byId('openShare').addEventListener('click', () => share.open());
-      byId('copyCoffee').addEventListener('click', (event) => copyText(byId('coffeeSnippet').textContent, event.currentTarget));
-      byId('copyShare').addEventListener('click', (event) => copyText(byId('shareSnippet').textContent, event.currentTarget));
-      byId('resetCoffee').addEventListener('click', () => {
-        byId('payeeName').value = coffeeDefaults.name;
-        byId('upiId').value = coffeeDefaults.upi;
-        byId('amount').value = coffeeDefaults.amount;
+      const updateShare = () => {
+        const url = get('shareUrl').value.trim() || shareDefaults.url;
+        const title = get('shareTitle').value.trim() || shareDefaults.title;
+        const text = get('shareText').value.trim() || shareDefaults.text;
+        share.updateConfig({ url, title, text });
+        get('shareSnippet').textContent = [
+          '<link rel="stylesheet" href="share-link/share-link.css">',
+          '<script src="share-link/share-link.js"',
+          '  data-url="' + escapeAttribute(url) + '"',
+          '  data-title="' + escapeAttribute(title) + '"',
+          '  data-text="' + escapeAttribute(text) + '">',
+          scriptEnd
+        ].join('\n');
+      };
+
+      const copyText = async (text, button) => {
+        const label = button.textContent;
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            const temporary = document.createElement('textarea');
+            temporary.value = text;
+            temporary.setAttribute('readonly', '');
+            temporary.style.position = 'fixed';
+            temporary.style.opacity = '0';
+            document.body.appendChild(temporary);
+            temporary.select();
+            const copied = document.execCommand('copy');
+            temporary.remove();
+            if (!copied) throw new Error('Clipboard copy was unavailable');
+          }
+          button.textContent = 'Copied';
+        } catch (error) {
+          button.textContent = 'Copy unavailable';
+        }
+        window.setTimeout(() => { button.textContent = label; }, 1800);
+      };
+
+      ['payeeName', 'upiId', 'amount'].forEach((id) => get(id).addEventListener('input', updateCoffee));
+      ['shareUrl', 'shareTitle', 'shareText'].forEach((id) => get(id).addEventListener('input', updateShare));
+      get('openCoffee').addEventListener('click', () => coffee.open());
+      get('openShare').addEventListener('click', () => share.open());
+      get('copyCoffee').addEventListener('click', (event) => copyText(get('coffeeSnippet').textContent, event.currentTarget));
+      get('copyShare').addEventListener('click', (event) => copyText(get('shareSnippet').textContent, event.currentTarget));
+
+      get('resetCoffee').addEventListener('click', () => {
+        get('payeeName').value = coffeeDefaults.name;
+        get('upiId').value = coffeeDefaults.upi;
+        get('amount').value = coffeeDefaults.amount;
         updateCoffee();
       });
-      byId('resetShare').addEventListener('click', () => {
-        byId('shareUrl').value = shareDefaults.url;
-        byId('shareTitle').value = shareDefaults.title;
-        byId('shareText').value = shareDefaults.text;
+      get('resetShare').addEventListener('click', () => {
+        get('shareUrl').value = shareDefaults.url;
+        get('shareTitle').value = shareDefaults.title;
+        get('shareText').value = shareDefaults.text;
         updateShare();
       });
-      byId('themeToggle').addEventListener('click', () => {
-        const root = document.documentElement;
-        root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+      get('themeToggle').addEventListener('click', (event) => {
+        const isLight = document.documentElement.dataset.theme !== 'light';
+        document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
+        event.currentTarget.textContent = isLight ? 'Switch to dark mode' : 'Switch to light mode';
+        event.currentTarget.setAttribute('aria-pressed', String(isLight));
       });
+
       updateCoffee();
       updateShare();
     })();
